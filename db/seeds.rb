@@ -1,7 +1,66 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+puts "cleaning database"
+User.destroy_all
+puts "creating users"
+puts "------------------"
+
+3.times do
+  users = User.create(
+    email: Faker::Internet.email,
+    encrypted_password: "12345",
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    admin: false
+  )
+  puts "normal user created"
+end
+puts "------------------"
+
+3.times do
+  users = User.create(
+    email: Faker::Internet.email,
+    encrypted_password: "12345",
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    admin: true
+  )
+  puts "admin user created"
+end
+
+
+puts "------------------"
+puts "users have been created"
+puts "------------------"
+
+puts "creating recipient profiles"
+
+3.times do
+  recipients = Recipient.create(
+    name: Faker::FunnyName.name,
+    bio: Faker::Book.title,
+    profile_photo: Faker::LoremPixel.image,
+    qr_code: Faker::Barcode.ean
+  )
+  puts "recipient profile created"
+end
+
+puts "------------------"
+puts "recipient profiles have been created"
+puts "------------------"
+
+puts "creating donations"
+5.times do
+  donations = Donation.create(
+    amount: rand(3..10),
+    user_id: @user_id,
+    recipient_id: @recipient_id
+  )
+  puts "donation created"
+end
+
+
+
+puts "------------------"
+puts "finished creating everything"
