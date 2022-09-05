@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :recipients
-  has_many :donations, through: :recipient
+  has_many :donations
+  has_many :recipients, through: :donations
 end
