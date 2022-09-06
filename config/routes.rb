@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   resources :recipients do
-    resources :donations, only: %i[show new create index]
+    resources :donations, only: %i[new create]
   end
 end
