@@ -4,6 +4,9 @@ class RecipientsController < ApplicationController
     @recipent = Recipient.new
   end
 
+  def index
+  end
+
   def create
     @recipient = Recipient(recipient_params)
     @recipient.user = current_user
