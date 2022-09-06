@@ -8,7 +8,7 @@ puts "creating users"
 puts "------------------"
 
 3.times do
-  users = User.create(
+    User.create(
     email: Faker::Internet.email,
     encrypted_password: "12345",
     first_name: Faker::Name.first_name,
@@ -20,7 +20,7 @@ end
 puts "------------------"
 
 3.times do
-  users = User.create(
+    User.create(
     email: Faker::Internet.email,
     encrypted_password: "12345",
     first_name: Faker::Name.first_name,
@@ -38,7 +38,7 @@ puts "------------------"
 puts "creating recipient profiles"
 
 3.times do
-  recipients = Recipient.create(
+   Recipient.create(
     name: Faker::FunnyName.name,
     bio: Faker::Book.title,
     profile_photo: Faker::LoremPixel.image,
@@ -53,7 +53,7 @@ puts "------------------"
 
 puts "creating donations"
 5.times do
-  donations = Donation.create(
+  Donation.create(
     amount: rand(3..10),
     user_id: @user_id,
     recipient_id: @recipient_id
