@@ -1,6 +1,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-require "Faker"
+
+require 'faker'
+
 
 puts "cleaning database"
 User.destroy_all
@@ -32,7 +34,7 @@ end
 
 
 puts "------------------"
-puts "users have been created"
+puts "All users have been created"
 puts "------------------"
 
 puts "creating recipient profiles"
