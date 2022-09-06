@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :recipients
-  has_many :donations, through: :recipient
+  has_many :donations
 end
