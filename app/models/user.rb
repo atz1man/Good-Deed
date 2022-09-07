@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 
-  has_many :recipients
+  has_many :recipients, dependent: :destroy
   has_many :donations
 end
