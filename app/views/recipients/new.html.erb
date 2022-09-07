@@ -10,8 +10,7 @@
       <%= f.input :name, placeholder: "Nickname: Jon" %>
       <%= f.input :bio, placeholder: "Bio: John is a retired war veteren, he is trying to raise money for shelter so he can get back on his feet."  %>
       <%= f.input :qr_code, placeholder: " QR Code: 0112376464" %>
-      <%# add this when i figure out the avatar
-      f.input :photo, as: :file  %>
+      <%= f.input :profile_photo  %>
     </div>
     <div class="form-actions">
       <%= f.button :submit, "Finished", class: "btn-flat" %>
@@ -19,4 +18,3 @@
     <% end %>
   </div>
 </div>
-

@@ -1,6 +1,6 @@
 class RecipientsController < ApplicationController
   def index
-    @recipient = Recipient.all
+    @recipients = Recipient.where(user: current_user)
   end
 
   def new
@@ -24,9 +24,10 @@ class RecipientsController < ApplicationController
     @recipient = Recipient.find(params[:id])
     @donation = Donation.new(recipient: @recipient)
   end
+
   private
 
   def recipient_params
-    params.require(:recipient).permit(:name, :bio, :qr_code)
+    params.require(:recipient).permit(:name, :bio, :qr_code, :photo)
   end
 end

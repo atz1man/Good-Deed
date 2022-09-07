@@ -11,29 +11,29 @@ User.destroy_all
 puts "creating users"
 puts "------------------"
 
-3.times do
-    User.create(
+2.times do
+    user = User.create(
     email: Faker::Internet.email,
-    encrypted_password: "12345",
+    password: "123456",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     admin: false
   )
-  puts "normal user created"
+  puts user.email
+  puts user.save!
 end
 puts "------------------"
 
-3.times do
-    User.create(
+
+    admin = User.create(
     email: Faker::Internet.email,
-    encrypted_password: "12345",
+    password: "123456",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     admin: true
   )
-  puts "admin user created"
-end
-
+  puts "admin #{User.last.admin} user created"
+  puts admin.save!
 
 puts "------------------"
 puts "All users have been created"
@@ -43,6 +43,7 @@ puts "creating recipient profiles"
 
 3.times do
    Recipient.create(
+    user: admin,
     name: Faker::FunnyName.name,
     bio: Faker::Book.title,
     profile_photo: Faker::LoremPixel.image,
@@ -59,8 +60,8 @@ puts "creating donations"
 5.times do
   Donation.create(
     amount: rand(3..10),
-    user_id: @user_id,
-    recipient_id: @recipient_id
+    user: User.first,
+    recipient: Recipient.first
   )
   puts "donation created"
 end
