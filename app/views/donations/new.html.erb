@@ -2,19 +2,24 @@
 
 <body>
 <p> Enter the amount you would like to donate </p>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">£</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+  </div>
 <ui>
-   <li> Empty text box </li>
-     <li> £3 </li>
-      <li> £5 </li>
-        <li> £7 </li>
+     <button type="button" class="btn btn-warning">£3</button>
+     <button type="button" class="btn btn-warning">£5</button>
+     <button type="button" class="btn btn-warning">£7</button>
   </ui>
-<
+
 <div class="form-check">
   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-  <label class="form-check-label" for="flexCheckDefault">Default checkbox</label>
+  <label class="form-check-label" for="flexCheckDefault">Click to add gift aid</label>
 </div>
 
 <%= simple_form_for(@donation) do |f|  %>
   <%= f.input :recipient, collection: @recipients %>
-  <%= f.submit "Submit" %>
+  <%= f.submit "Confirm" %>
 <% end %>
