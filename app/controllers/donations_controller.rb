@@ -4,13 +4,11 @@ class DonationsController < ApplicationController
   def new
     @donation = Donation.new
     @recipients = Recipient.all
-
   end
 
   # def show
   #   @donation = Donations.find(params[:id])
   # end
-
 
   def create
     @donation = Donations.new(donation_params)

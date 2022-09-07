@@ -1,12 +1,37 @@
+// colours for the website
+$orange-gd: #F98D44;
+$blue-gd: #004274;
+$green-gd: #78D9B3;
 
+// this is the larger blue button
 
+.btn-blue-lrg {
+  background-color: #004274;
+  border: none;
+  border-radius: 100px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 1px;
+}
+
+.btn-blue-lrg:hover {
+  background-color: #2176b6;
+  color:white;
+}
+// this is the same as the larger blue button - trying to replace this but dont want to loose anything
 .btn-flat {
   color: white;
   height: 100px;
   width: 200px;
   padding: 8px 24px;
   border-radius: 100px;
-  background: blue;
+  background: #004274;
   transition: background 0.3s ease;
 }
 
@@ -15,39 +40,25 @@
   color: white;
 }
 
-.btn-gradient {
-  color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  font-weight: bold;
-  background: linear-gradient(#167FFB, #0F60C4);
-  transition: background 0.3s ease;
-  border: 1px solid #0F60C4;
+
+
+// blue button smaller version
+.btn-blue-small {
+
 }
 
-.btn-gradient:hover {
-  background: linear-gradient(#147EFF, #0F67DA);
-  color: white;
+// small orange button
+.btn-orange-small {
+
 }
 
 
-// // blue button
-// .btn-blue-small {
+// large orange donate button
+.btn-orng-lrg{
+  border-radius: 50%;
+}
 
-// }
+// login /sign up link - barely a button
+.btn-link {
 
-// // small orange and blue buttons (donate and read more /sign up / sign in
-// .btn-orange-small {
-
-// }
-
-
-// // large orange donate button
-// .btn-orng-lrg{
-
-// }
-
-// // login /sign up link button
-// .btn-link {
-
-// }
+}

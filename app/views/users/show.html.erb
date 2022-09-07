@@ -1,31 +1,12 @@
-<h1>PROFILE</h1>
-<%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered", alt: "avatar-bordered" %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-              <%= link_to "My donations", "", class: "btn btn-flat" %>
-
-
-
-
-
-
-                  <h3>Kind people are my kinda people</h3>
-
-
-
-
-                  <h4>emoji      10 donations thank you</h4>
+<div class="container p-4">
+    <div class="profile-top">
+      <h1 class="title-white">Hello <%= current_user.first_name %> </h1>
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered my-3", alt: "avatar-bordered" %>
+      <%= link_to "My donations", "", class: "btn-blue-lrg py-3" %>
+      <h2 class="italic-bold py-3">Kind people are my kinda people</h2>
+    </div>
+    <div class="profile-btm">
+      <%= image_tag "https://i.guim.co.uk/img/media/6bb1314dbe7b5b178616018f3096c0477790956f/0_982_5000_3000/master/5000.jpg?width=620&quality=85&fit=max&s=5c01a384ff9521d717204fc1c9f691c2", class: "smiley", alt: "avatar-bordered" %>
+      <h2 class="italic-bold">You have made 10 donations! Thank you!</h2>
+    </div>
+</div>
