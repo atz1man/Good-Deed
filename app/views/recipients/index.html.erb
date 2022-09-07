@@ -3,7 +3,7 @@
 
 <div class="container">
   <div class="cards">
-   <% @recipient.each do |recipient| %>
+   <% @recipients.each do |recipient| %>
     <p>
       <%= link_to "Show recipient", recipient_path(recipient)  %>
     </p>
@@ -24,4 +24,3 @@
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
       Dinner %>
       <%# </div> %>
-
