@@ -8,11 +8,13 @@
       <li> £5 </li>
         <li> £7 </li>
   </ui>
-
+<
 <div class="form-check">
   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
   <label class="form-check-label" for="flexCheckDefault">Default checkbox</label>
 </div>
 
-
-</body>
+<%= simple_form_for(@donation) do |f|  %>
+  <%= f.input :recipient, collection: @recipients %>
+  <%= f.submit "Submit" %>
+<% end %>
