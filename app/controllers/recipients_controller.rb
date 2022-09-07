@@ -9,7 +9,7 @@ class RecipientsController < ApplicationController
 
   def create
     @recipient = Recipient.new(recipient_params)
-    @recipien.user = current_user
+    @recipient.user = current_user
     @recipient.save!
     # recipient_path is recipient#show
     redirect_to recipients_path(@recipient)
