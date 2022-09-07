@@ -4,14 +4,16 @@ class RecipientsController < ApplicationController
     @recipent = Recipient.new
   end
 
-  def index
-  end
+    def index
+      @recipient = Recipient.all
+    end
+
 
   def create
     @recipient = Recipient(recipient_params)
     @recipient.user = current_user
-    # Logic for redirecting the recipent
     # if @recipient.save!
+    # Logic for redirecting the recipent
     #   redirect
     # else
   end
@@ -20,9 +22,5 @@ class RecipientsController < ApplicationController
   def show
     @recipient = Recipient.find(params[:id])
     @donation = Donation.new(recipient: @recipient)
-  end
-
-  def index
-    @recipient = Recipient.all
   end
 end

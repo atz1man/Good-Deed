@@ -1,12 +1,15 @@
 class DonationsController < ApplicationController
   before_action :set_recipient, only: %i[new create]
+
+  def new
+    @donation = Donations.new
+
+  end
+
   # def show
   #   @donation = Donations.find(params[:id])
   # end
 
-  def new
-    @donation = Donations.new
-  end
 
   def create
     @donation = Donations.new(donation_params)
