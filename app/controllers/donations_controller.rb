@@ -11,14 +11,13 @@ class DonationsController < ApplicationController
   # end
 
   def create
-    @donation = Donations.new(donation_params)
-    @donation.recipient = @recipient
-
+    @donation = Donation.new(donation_params)
+    @donation.recipient = Recipient.find(donation_params[:recipient_id].to_i)
     if current_user.present?
       @donation.user = current_user
     end
-
     @donation.save
+    flash[:notice] = "Thank you for your donation!"
     # to do
     # redirect_to recipient_donation_confirmation_path(@donation)
   end
@@ -30,6 +29,6 @@ class DonationsController < ApplicationController
   # end
 
   def donation_params
-    params.require(:donation).permit(:amount)
+    params.require(:donation).permit(:amount, :recipient_id)
   end
 end

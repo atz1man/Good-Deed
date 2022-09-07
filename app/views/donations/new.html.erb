@@ -20,6 +20,7 @@
 </div>
 
 <%= simple_form_for(@donation) do |f|  %>
-  <%= f.input :recipient, collection: @recipients %>
+  <%= f.input :amount %>
+  <%= f.association :recipient, collection: @recipients %>
   <%= f.submit "Confirm" %>
 <% end %>
