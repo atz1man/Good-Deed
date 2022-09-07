@@ -1,2 +1,22 @@
-<h1> Test printing </h1>
+
+<%# This is /recipients/new %>
+<%# I dont want input name / bio and qr code I want this to go inside as a placeholder %>
+
+<div class="container">
+  <div class="host-form">
+    <h1>Create profile</h1>
+    <%= simple_form_for @recipient do |f| %>
+    <div class="form-inputs">
+      <%= f.input :name, placeholder: "Nickname: Big Al" %>
+      <%= f.input :bio, placeholder: "Bio: John is a retired war veteren, he is trying to raise money for shelter so he can get back on his feet."  %>
+      <%= f.input :qr_code, placeholder: " QR Code: 0112376464" %>
+      <%# add this when i figure out the avatar
+      f.input :photo, as: :file  %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, "Finished", class: "btn-flat" %>
+    </div>
+    <% end %>
+  </div>
+</div>
 
