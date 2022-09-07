@@ -5,6 +5,8 @@ require 'faker'
 
 
 puts "cleaning database"
+Donation.destroy_all
+Recipient.destroy_all
 User.destroy_all
 puts "creating users"
 puts "------------------"
