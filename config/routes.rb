@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get "users/:id", to: "users#show", as: :user
   # get "donations/:id", to: "donations#create", as: :user
 
-  resources :recipients do
-    resources :donations, only: %i[new create]
-  end
+  resources :donations, only: %i[new create]
+
+  resources :recipients
+   resources :donations, only: %i[create]
 end

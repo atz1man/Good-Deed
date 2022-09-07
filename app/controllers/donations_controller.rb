@@ -1,8 +1,9 @@
 class DonationsController < ApplicationController
-  before_action :set_recipient, only: %i[new create]
+  # before_action :set_recipient, only: %i[new create]
 
   def new
-    @donation = Donations.new
+    @donation = Donation.new
+    @recipients = Recipient.all
 
   end
 
@@ -26,9 +27,9 @@ class DonationsController < ApplicationController
 
   private
 
-  def set_recipient
-    @recipient = Recipient.find(params[:recipient_id])
-  end
+  # def set_recipient
+  #   @recipient = Recipient.find(params[:recipient_id])
+  # end
 
   def donation_params
     params.require(:donation).permit(:amount)
