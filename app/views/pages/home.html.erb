@@ -1,6 +1,10 @@
 <h1>Pages#home</h1>
 
-
-<%= link_to "DONATE QR", "new_recipient_donation_path", class: "btn btn-gradient" %>
-
-new_recipient_donation
+# In this instants what I'm attempting to do is create a donate button which
+# Be redirect to the donate page
+<%
+=begin%>
+ raise
+<%=  redirect_to "Donate QR Scan", new_recipient_donation_path(@donation) %>
+<%
+=end%>

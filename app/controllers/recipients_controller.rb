@@ -15,6 +15,7 @@ class RecipientsController < ApplicationController
     redirect_to recipients_path(@recipient)
     # Logic for redirecting the recipent
     # if @recipient.save!
+    # Logic for redirecting the recipent
     #   redirect
     # else
   end
@@ -23,7 +24,6 @@ class RecipientsController < ApplicationController
     @recipient = Recipient.find(params[:id])
     @donation = Donation.new(recipient: @recipient)
   end
-
   private
 
   def recipient_params
