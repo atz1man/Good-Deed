@@ -1,0 +1,28 @@
+// colours for the website
+$orange-gd: #F98D44;
+$blue-gd: #004274;
+$green-gd: #78D9B3;
+
+html * {
+  font-family: 'Work Sans', sans-serif;
+}
+
+// main titles - hello's - white version
+.title-white {
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+
+}
+// main titles - hello's - blue version
+.title-blue {
+  color: #004274;
+  font-family: 'Playfair Display', serif;
+}
+
+//This is for sayings on the page and also names of homeless
+.italic-bold {
+  color: #004274;
+  font-family: 'Work Sans', sans-serif;
+  font-style: italic;
+}
