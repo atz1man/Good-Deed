@@ -1,1 +1,25 @@
-<h1> Example Print Test </h1>
+<h1> Showing all recipients profiles I have created as an admin </h1>
+
+<div class="container">
+  <div class="cards">
+   <% @recipient.each do |recipient| %>
+    <p>
+      <%= link_to "Show recipient", recipient_path(recipient)  %>
+    </p>
+    <% end %>
+  </div>
+</div>
+
+
+<%#
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      Breakfast
+    </div>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+      Lunch
+    </div>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+      Dinner %>
+      <%# </div> %>
