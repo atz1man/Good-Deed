@@ -1,28 +1,31 @@
 class RecipientsController < ApplicationController
-
-  def new
-    @recipent = Recipient.new
+  def index
+    @recipient = Recipient.all
   end
 
-  def index
+  def new
+    @recipient = Recipient.new
   end
 
   def create
-    @recipient = Recipient(recipient_params)
-    @recipient.user = current_user
+    @recipient = Recipient.new(recipient_params)
+    @recipient.save!
+    # recipient_path is recipient#show
+    redirect_to recipient_path(@recipient)
     # Logic for redirecting the recipent
     # if @recipient.save!
     #   redirect
     # else
   end
 
-
   def show
     @recipient = Recipient.find(params[:id])
     @donation = Donation.new(recipient: @recipient)
   end
 
-  def index
-    @recipient = Recipient.all
+  private
+
+  def recipient_params
+    params.require(:recipient).permit(:name, :bio, :qr_code)
   end
 end
