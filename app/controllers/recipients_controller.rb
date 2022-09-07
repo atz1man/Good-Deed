@@ -3,6 +3,11 @@ class RecipientsController < ApplicationController
     @recipients = Recipient.where(user: current_user)
   end
 
+  def show
+    @recipient = Recipient.find(params[:id])
+    @donation = Donation.new(recipient: @recipient, user: current_user)
+  end
+
   def new
     @recipient = Recipient.new
   end
@@ -18,11 +23,6 @@ class RecipientsController < ApplicationController
     # Logic for redirecting the recipent
     #   redirect
     # else
-  end
-
-  def show
-    @recipient = Recipient.find(params[:id])
-    @donation = Donation.new(recipient: @recipient)
   end
 
   private
