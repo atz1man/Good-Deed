@@ -15,7 +15,12 @@
 
       <% @recipients.each do |recipient| %>
         <p>
+        <br>
+          <div class="card">
+           <div class="card-body">
           <%= link_to recipient.name, recipient_path(recipient)  %>
+           </div>
+          </div>
         </p>
       <% end %>
     <% end %>
