@@ -1,25 +1,18 @@
+
 <h1> Hello changemarker</h1>
 
-<p> Enter the amount you would like to donate </p>
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text">£</span>
-    </div>
-    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-  </div>
-<ui>
-     <button type="button" class="btn btn-warning">£3</button>
-     <button type="button" class="btn btn-warning">£5</button>
-     <button type="button" class="btn btn-warning">£7</button>
-  </ui>
-
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-  <label class="form-check-label" for="flexCheckDefault">Click to add gift aid</label>
-</div>
-
-<%= simple_form_for(@donation) do |f|  %>
-  <%= f.input :amount %>
-  <%= f.association :recipient, collection: @recipients %>
-  <%= f.submit "Confirm" %>
-<% end %>
+<p> Enter the amount you would like to donate
+BLABLABLA</p>
+  <%= simple_form_for([@recipient, @donation]) do |f|  %>
+    <%= f.input :amount, class: 'ml=-32' %>
+      <ul>
+        <button type="button" class="btn-orange-sml">£3</button>
+        <button type="button" class="btn-orange-sml">£5</button>
+        <button type="button" class="btn-orange-sml">£7</button>
+      </ul>
+      <div class="form-check">
+        <%# <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" /> %>
+        <label class="form-check-label" for="flexCheckDefault">Click to add gift aid</label>
+      </div>
+    <%= f.submit "Confirm" %>
+  <% end %>
