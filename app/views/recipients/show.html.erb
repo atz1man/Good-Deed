@@ -8,3 +8,12 @@
 <% if !admin?  %>
   <%= render "new_donation", donation: @donation %>
 <% end  %>
+
+<%= cl_image_tag @recipient.photo.key, height: 300, width: 400, crop: :fill %>
+
+<p><%= @recipient.name %></p>
+<p><%= @recipient.bio %></p>
+<p><%= @svg.html_safe %></p>
+<p>read more btn to open a modal with more info</p>
+<p>big donate button to take you to donate page</p>
+<p>about good deed button to take you to home page</p>
