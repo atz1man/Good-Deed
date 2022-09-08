@@ -49,7 +49,7 @@ puts "------------------"
 puts "creating recipient profiles"
 
 3.times do
-   Recipient.create(
+  Recipient.create(
     user: admin,
     name: Faker::FunnyName.name,
     bio: Faker::Book.title,
@@ -72,8 +72,6 @@ puts "creating donations"
   )
   puts "donation created"
 end
-
-
 
 puts "------------------"
 puts "finished creating everything"
