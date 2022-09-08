@@ -44,7 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_114722) do
 
   create_table "donations", force: :cascade do |t|
     t.integer "amount"
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.bigint "recipient_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -55,7 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_114722) do
   create_table "recipients", force: :cascade do |t|
     t.string "name"
     t.text "bio"
-    t.string "profile_photo"
+    t.string "photo"
     t.string "qr_code"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
