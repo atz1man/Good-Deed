@@ -1,14 +1,25 @@
+<div class="home-top">
+  <%= image_tag "GoodDeedBlack", style: 'height:auto;width:90%;', class: "logo-title" %>
+</div>
 
-<div class="container">
+<div class="home-btm">
+  <div class="about-text">
+    <p class = "p-white">
+      Good Deed are a wonderful charity who work with homeless people to help get them off the street.
+      80% of people say they are more likely to donate to the homeless if they knew...
+      <%# THIS PART CAN BE PART OF THE READ MORE MODAL
+      they were going to spend it on shelter or food.
+      Thanks to Good Deed, you can easily donate to someone on the street and you can be sure the money will only be spent helping them in a positive way. %>
+    </p>
+  </div>
 
-  <h1>Good Deed</h1>
+  <div>
+  <%# This root path needs to be changed when we have a create donation page i think? %>
+    <%= link_to "Read more", root_path, class: "btn-blue-sml d-flex" %>
+  </div>
 
-
-
-
-
-
-<%= link_to 'donate now', recipients_path %>
-
-
+  <div class="btm-btm">
+  <%# This root path needs to be changed when we have a create donation page i think? %>
+    <%= link_to "Donate", root_path, class: "btn-orange-lrg" %>
+  </div>
 </div>
