@@ -3,8 +3,8 @@
     <% if @user.donations.present? %>
       <% @donations.each do |donation| %>
         <p>
-          <%= link_to 'Show recipient', recipient_path(donation.recipient_id)  %>
-          <%= @donation.recipients.name %>
+          <%= link_to donation.recipient.name, recipient_path(donation.recipient_id)  %>
+
         </p>
       <% end %>
     <% end %>
@@ -18,7 +18,7 @@
         <br>
           <div class="card">
            <div class="card-body">
-          <%= link_to "Show recipient", recipient_path(recipient)  %>
+          <%= link_to recipient.name, recipient_path(recipient)  %>
            </div>
           </div>
         </p>

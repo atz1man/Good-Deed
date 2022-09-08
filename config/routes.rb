@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   get "users/:id", to: "users#show", as: :user
 
   resources :recipients do
-    resources :donations, only: %i[create]
+    resources :donations, only: %i[new create]
   end
 end

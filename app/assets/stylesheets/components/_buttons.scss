@@ -21,6 +21,10 @@ $green-gd: #78D9B3;
   box-shadow: 1px 1px 1px 0.5px grey;
 }
 
+.btn-orange-lrg:hover {
+
+}
+
 // this is the larger blue button
 .btn-blue-lrg {
   background-color: #004274;
@@ -84,8 +88,20 @@ $green-gd: #78D9B3;
 }
 
 // small orange button
-.btn-orange-small {
-
+.btn-orange-sml {
+  background-color: #F98D44;
+  border: none;
+  border-radius: 100px;
+  color: white;
+  padding: 25px 30px;
+  margin: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  text-decoration: none;
+  font-family: 'Work Sans', sans-serif;
+  box-shadow: 1px 1px 1px 0.5px grey;
 }
 
 
