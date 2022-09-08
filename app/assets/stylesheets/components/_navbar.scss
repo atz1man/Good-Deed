@@ -1,6 +1,15 @@
+// colours for the website
+$orange-gd: #F98D44;
+$blue-gd: #004274;
+$green-gd: #78D9B3;
+
+
+.container-fluid{
+  background-color: #78D9B3;
+}
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #78D9B3;
 }
 
 .navbar-lewagon .navbar-collapse {

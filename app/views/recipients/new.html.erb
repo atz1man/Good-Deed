@@ -1,4 +1,3 @@
-
 <%# This is /recipients/new %>
 <%# I dont want input name / bio and qr code I want this to go inside as a placeholder %>
 <div class ="wrapper">
@@ -11,8 +10,8 @@
           <div class="form-inputs">
             <%= f.input :name, placeholder: "Nickname: Jon" %>
               <%= f.input :bio, placeholder: "Bio: John is a retired war veteren, he is trying to raise money for shelter so he can get back on his feet."  %>
-                <%= f.input :qr_code, placeholder: " QR Code: 0112376464" %>
-            <%= f.input :photo %>
+              <%= f.input :qr_code, placeholder: " QR Code: 0112376464" %>
+              <%= f.input :photo %>
             </div>
            <div class="form-actions">
       <%= f.button :submit, "Finished", class: "btn-flat" %>
