@@ -11,6 +11,14 @@ User.destroy_all
 puts "creating users"
 puts "------------------"
 
+user1 = User.create(
+  email: 'rizwan@gmail.com',
+  password: "123456",
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  admin: false
+)
+
 2.times do
     user = User.create(
     email: Faker::Internet.email,
@@ -24,9 +32,8 @@ puts "------------------"
 end
 puts "------------------"
 
-
     admin = User.create(
-    email: Faker::Internet.email,
+    email: 'admin@gmail.com',
     password: "123456",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -60,7 +67,7 @@ puts "creating donations"
 5.times do
   Donation.create(
     amount: rand(3..10),
-    user: User.first,
+    user: user1,
     recipient: Recipient.first
   )
   puts "donation created"

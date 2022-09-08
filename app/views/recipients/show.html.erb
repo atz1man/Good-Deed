@@ -1,5 +1,10 @@
 <h1>show page for recipient</h1>
 
-<%# <%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
+<% if admin?  %>
+  <%= link_to 'edit', edit_recipient_path %>
+  <%= link_to 'delete', recipient_path(@recipient), data: { "turbo-method": :delete, "turbo-confirm": "are you sure?"} %>
+<% end  %>
 
-<%= render "new_donation", donation: @donation %>
+<% if !admin?  %>
+  <%= render "new_donation", donation: @donation %>
+<% end  %>

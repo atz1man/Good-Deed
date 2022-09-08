@@ -1,6 +1,9 @@
 class RecipientsController < ApplicationController
   def index
-    @recipients = Recipient.where(user: current_user)
+    @user = current_user
+    @recipients = Recipient.where(user: current_user) if current_user.admin == true
+    all_donations = Donation.where(user: current_user)
+    @donations = all_donations.select(:recipient_id).distinct
   end
 
   def show
@@ -16,13 +19,17 @@ class RecipientsController < ApplicationController
     @recipient = Recipient.new(recipient_params)
     @recipient.user = current_user
     @recipient.save!
-    # recipient_path is recipient#show
     redirect_to recipients_path(@recipient)
-    # Logic for redirecting the recipent
-    # if @recipient.save!
-    # Logic for redirecting the recipent
-    #   redirect
-    # else
+  end
+
+  def edit
+    @recipient = Recipient.find(params[:id])
+  end
+
+  def destroy
+    @recipient = Recipient.find(params[:id])
+    @recipient.destroy
+    redirect_to recipients_path, status: :see_other
   end
 
   private

@@ -2,11 +2,19 @@
   <div>
     <i class="fa-sharp fa-solid fa-house"></i>
   </div>
+
+  <% if user_signed_in? %>
+    <% if !admin? %>
+      <%= link_to 'my donations', recipients_path, class: "btn btn-flat" %>
+    <% end %>
+
+    <% if admin? %>
+      <%= link_to 'my recipients', recipients_path, class: "btn btn-flat" %>
+    <% end %>
+  <% end %>
+
   <div>
-    <%= link_to "My donations", "", class: "btn btn-flat" %>
-  </div>
-  <div>
-  <i class="fa-regular fa-user"></i>
+    <i class="fa-regular fa-user"></i>
   </div>
 
 </div>
