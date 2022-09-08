@@ -1,8 +1,9 @@
 class DonationsController < ApplicationController
 
   def new
+    @recipient = Recipient.find(params[:recipient_id])
     @donation = Donation.new
-    @recipients = Recipient.all
+    # @recipients = Recipient.all
   end
 
   def create
@@ -11,6 +12,7 @@ class DonationsController < ApplicationController
     @donation.recipient = @recipient
     @donation.user = current_user
     @donation.save!
+    redirect_to root_path
   end
 
   private
