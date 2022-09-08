@@ -3,8 +3,25 @@ $orange-gd: #F98D44;
 $blue-gd: #004274;
 $green-gd: #78D9B3;
 
-// this is the larger blue button
 
+// large orange donate button
+.btn-orange-lrg{
+  background-color: #F98D44;
+  border: none;
+  border-radius: 400px;
+  color: white;
+  padding: 100px 60px;
+  margin: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 50px;
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  box-shadow: 1px 1px 1px 0.5px grey;
+}
+
+// this is the larger blue button
 .btn-blue-lrg {
   background-color: #004274;
   border: none;
@@ -15,10 +32,10 @@ $green-gd: #78D9B3;
   text-decoration: none;
   display: inline-block;
   font-size: 30px;
-  // margin: 5px;
   text-decoration: none;
   font-family: 'Work Sans', sans-serif;
   letter-spacing: 1px;
+  box-shadow: 1px 1px 1px 0.5px grey;
 }
 
 .btn-blue-lrg:hover {
@@ -42,10 +59,28 @@ $green-gd: #78D9B3;
 }
 
 
-
 // blue button smaller version
-.btn-blue-small {
 
+.btn-blue-sml {
+  margin: 20px;
+  background-color: #004274;
+  border: none;
+  border-radius: 100px;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  text-decoration: none;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 0.5px;
+  box-shadow: 1px 1px 1px 0.5px grey;
+}
+
+.btn-blue-sml:hover {
+  background-color: #2176b6;
+  color:white;
 }
 
 // small orange button
@@ -54,13 +89,7 @@ $green-gd: #78D9B3;
 }
 
 
-// large orange donate button
-.btn-orange-lrg{
-  border-radius: 50%;
-  background-color: #F98D44;
-  width: 250px;
-  height: 250px;
-}
+
 
 // login /sign up link - barely a button
 .btn-link {
