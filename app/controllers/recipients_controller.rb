@@ -9,14 +9,6 @@ class RecipientsController < ApplicationController
   def show
     @recipient = Recipient.find(params[:id])
     @donation = Donation.new(recipient: @recipient, user: current_user)
-    @qr_code = RQRCode::QRCode.new(@recipient.qr_code)
-    @svg = @qr_code.as_svg(
-      offset: 0,
-      color: '000',
-      shape_rendering: 'crispEdges',
-      standalone: true
-    )
-
   end
 
   def new
@@ -27,6 +19,25 @@ class RecipientsController < ApplicationController
     @recipient = Recipient.new(recipient_params)
     @recipient.user = current_user
     @recipient.save!
+    qrcode = RQRCode::QRCode.new("https://good-deed1.herokuapp.com/recipients/#{@recipient.id}")
+    png = qrcode.as_png(
+      bit_depth: 1,
+      border_modules: 1,
+      color_mode: ChunkyPNG::COLOR_GRAYSCALE,
+      color: "black",
+      file: nil,
+      fill: "white",
+      module_px_size: 10,
+      resize_exactly_to: false,
+      resize_gte_to: false,
+      size: 250
+    )
+
+    Cloudinary::Uploader.upload("#{png.to_data_url}",
+      :public_id => "qr_code#{@recipient.id}",
+      :use_filename => true
+      )
+
     redirect_to recipients_path(@recipient)
   end
 

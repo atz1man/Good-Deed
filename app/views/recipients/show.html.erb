@@ -7,13 +7,19 @@
 
 <% if !admin?  %>
   <%= render "new_donation", donation: @donation %>
-<% end  %>
+<% end %>
 
-<%= cl_image_tag @recipient.photo.key, height: 300, width: 400, crop: :fill %>
+<% if @recipient.photo.key.present?%>
+  <%= cl_image_tag @recipient.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 
 <p><%= @recipient.name %></p>
 <p><%= @recipient.bio %></p>
-<p><%= @svg.html_safe %></p>
+
+<% str = cl_image_path "qr_code#{@recipient.id}.png" %>
+<% newPath = str.sub /\/v\d*\/development/, '' %>
+<img src="<%= newPath %>" alt="qr-code">
+
 <p>read more btn to open a modal with more info</p>
 <p>big donate button to take you to donate page</p>
 <p>about good deed button to take you to home page</p>
