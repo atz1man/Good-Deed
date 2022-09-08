@@ -1,7 +1,7 @@
 class RecipientsController < ApplicationController
   def index
     @user = current_user
-    @recipients = Recipient.where(user: current_user) if current_user.admin == true
+    @recipients = Recipient.where(user: current_user) if current_user.admin? == true
     all_donations = Donation.where(user: current_user)
     @donations = all_donations.select(:recipient_id).distinct
   end
