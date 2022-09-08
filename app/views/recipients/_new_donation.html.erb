@@ -1,4 +1,7 @@
-<%= simple_form_for [@recipient, @donation] do |f|  %>
-  <%= f.input :amount %>
-  <%= f.submit "Confirm" %>
-<% end %>
+<div class ="container">
+<br>
+  <%= simple_form_for [@recipient, @donation] do |f|  %>
+    <%= f.input :amount %>
+    <%= f.submit "Confirm" %>
+  <% end %>
+</div>
