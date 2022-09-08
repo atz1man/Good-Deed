@@ -6,6 +6,14 @@ class RecipientsController < ApplicationController
   def show
     @recipient = Recipient.find(params[:id])
     @donation = Donation.new(recipient: @recipient, user: current_user)
+    @qr_code = RQRCode::QRCode.new(@recipient.qr_code)
+    @svg = @qr_code.as_svg(
+      offset: 0,
+      color: '000',
+      shape_rendering: 'crispEdges',
+      standalone: true
+    )
+
   end
 
   def new
