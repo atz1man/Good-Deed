@@ -4,10 +4,13 @@ $green-gd: #78D9B3;
 
 .home-top{
   background-color: #78D9B3;
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
 }
 
-.home-btm{
+.home-bottom{
   background-color: #78D9B3;
+  display: flex;
+  justify-content: center;
+  margin-top: -20px;
 }
