@@ -38,7 +38,7 @@ class RecipientsController < ApplicationController
       :use_filename => true
       )
 
-    redirect_to recipients_path(@recipient)
+    redirect_to recipient_path(@recipient)
   end
 
   def edit
@@ -55,5 +55,13 @@ class RecipientsController < ApplicationController
 
   def recipient_params
     params.require(:recipient).permit(:name, :bio, :qr_code, :photo)
+  end
+end
+
+
+def create_pictures
+  photos = params.dig(:recipient, :pictures) || []
+  photos.each do |photo|
+    @recipient.pictures.create(photo: photo)
   end
 end
