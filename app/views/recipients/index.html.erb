@@ -1,10 +1,12 @@
 
-
+<%# title to welcome the admin with their name %>
 <div class="profile-top">
   <h1 class="title-white">Hello <%= current_user.first_name %> </h1>
-    <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered my-3", alt: "avatar-bordered" %>
-    <%= link_to "My donations", "", class: "btn-blue-lrg py-3" %>
+    <%# <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered my-3", alt: "avatar-bordered" %>
 
+      <div >
+        <%= link_to "Create a profile", new_recipient_path %>
+      </div>
     <%= form_with url: recipients_path, method: :get, class: "search d-flex" do %>
       <%= text_field_tag :query,
         params[:query],
@@ -19,12 +21,12 @@
   <div class="cards">
 
  <% if @user.donations.present? %>
-      <% @donations.each do |donation| %>
-        <p>
-          <%= link_to "Show recipient", recipient_path(donation.recipient_id)  %>
-        </p>
-      <% end %>
+    <% @donations.each do |donation| %>
+      <p>
+        <%= link_to "Show recipient", recipient_path(donation.recipient_id)  %>
+      </p>
     <% end %>
+  <% end %>
 
 
 <% if @user.admin? %>
