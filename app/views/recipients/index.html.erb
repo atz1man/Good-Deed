@@ -17,30 +17,37 @@
       <%= submit_tag "", class: "search-mag" %>
     </div>
     <% end %>
-    <% end %>
-  </div>
+  <% end %>
+</div>
 
 <div class="container">
-  <div class="cards">
+<div class="d-flex justify-content-center">
+  <div class= "row" class="cards">
+    <div class="column">
+      <% if @user.donations.present? %>
+          <% @donations.each do |donation| %>
+            <% recipient = Recipient.find(donation.recipient_id) %>
+                <div class="card">
+                  <% if recipient.photo.key.present? %>
+                    <%= cl_image_tag recipient.photo.key, height: 300, width: 400, crop: :fill %>
+                  <% end %>
+                  <%= link_to recipient.name, recipient_path(donation.recipient_id)  %>
+                </div>
+                </div>
+            <% end %>
+      <% end %>
 
-<% if @user.donations.present? %>
-  <% @donations.each do |donation| %>
-    <p>
-      <%= link_to "Show recipient", recipient_path(donation.recipient_id)  %>
-    </p>
-  <% end %>
-<% end %>
-
-<% if @user.admin? %>
-  <%= link_to 'new recipient', new_recipient_path  %>
-  <% @recipients.each do |recipient| %>
-    <p>
-    <br>
-      <div class="card">
-        <div class="card-body">
-          <%= link_to recipient.name, recipient_path(recipient)  %>
-        </div>
-      </div>
-    </p>
-  <% end %>
-<% end %>
+      <% if @user.admin? %>
+          <%= link_to 'new recipient', new_recipient_path  %>
+          <% @recipients.each do |recipient| %>
+            <div class = "card">
+              <% if recipient.photo.key.present? %>
+                  <%= cl_image_tag recipient.photo.key, height: 300, width: 400, crop: :fill %>
+                <% end %>
+                <%= link_to recipient.name, recipient_path(recipient)  %>
+            </div>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
