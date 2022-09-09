@@ -11,19 +11,28 @@
   </div>
 
   <div>
-    <%# This root path needs to be changed when we have a create donation page i think? %>
+    <%# This is for a modal or scroll down %>
     <%= link_to "Read more", root_path, class: "btn-blue-sml d-flex" %>
   </div>
 </div>
-<% if user_signed_in? && !admin? %>
+<%# if no one is logged in %>
+  <% if !user_signed_in? %>
     <div class="home-bottom">
+    <%# show the donate button which will open camera %>
+      <label for="donate" class="btn-orange-lrg">Donate</label>
+      <input type="file" name="photo" id="donate">
+<%# if the user is signed in and not an admin %>
+    <% elsif user_signed_in? && !admin? %>
+      <%# show a link to my donations so i can see them all %>
+      <%= link_to "My Donations", recipients_path, class: "btn-blue-sml d-flex" %>
       <label for="donate" class="btn-orange-lrg">Donate</label>
       <input type="file" name="photo" id="donate">
     </div>
   <% else %>
+  <%# if the user is admin %>
     <div class="home-bottom">
-        <label for="My People" class="btn-orange-lrg">My People</label>
-        <input type="file" name="photo" id="my_peolple">
+    <%# show the link to my people %>
+      <%= link_to "My People", recipients_path, class: "btn-blue-sml d-flex" %>
     </div>
   <% end %>
 </div>

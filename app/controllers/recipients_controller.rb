@@ -38,7 +38,7 @@ class RecipientsController < ApplicationController
       :use_filename => true
       )
 
-    redirect_to recipients_path(@recipient)
+    redirect_to recipient_path(@recipient)
   end
 
   def edit
