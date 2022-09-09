@@ -1,8 +1,5 @@
 <div class="home-top">
   <%=image_tag "https://res.cloudinary.com/dl9jjyyew/image/upload/v1662643947/GoodDeedWhite_ufm7vi.png", style: 'height:auto;width:90%;', class: "logo-title" %>
-</div>
-
-<div class="home-btm">
   <div class="about-text">
     <p class = "p-white">
       Good Deed are a wonderful charity who work with homeless people to help get them off the street.
@@ -13,9 +10,18 @@
     </p>
   </div>
 
-  <div class="btm-btm">
-  <%# This root path needs to be changed when we have a create donation page i think? %>
-    <%= link_to "Donate", root_path, class: "btn-orange-lrg" %>
-    <input type="file" accept="image/*" capture="camera">
+  <div>
+    <%# This root path needs to be changed when we have a create donation page i think? %>
+    <%= link_to "Read more", root_path, class: "btn-blue-sml d-flex" %>
+  </div>
+</div>
+
+<div class="home-bottom">
+  <%# This root path needs to be changed something like this - new_recipient_donation_path(recipient[id]) %>
+  <%# saying no route matches for this path? %>
+  <%# <%= link_to "donate", new_recipient_donation_path %>
+  <%# /recipients/:recipient_id/donations/new(.:format) %>
+  <label for="donate" class="btn-orange-lrg">Donate</label>
+  <input type="file" name="photo" id="donate">
   </div>
 </div>

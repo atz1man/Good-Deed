@@ -15,6 +15,16 @@
   </div>
 
 
+<div class="container">
+  <div class="cards">
+
+ <% if @user.donations.present? %>
+      <% @donations.each do |donation| %>
+        <p>
+          <%= link_to "Show recipient", recipient_path(donation.recipient_id)  %>
+        </p>
+      <% end %>
+    <% end %>
 
 
 <% if @user.admin? %>
@@ -26,7 +36,7 @@
     <br>
       <div class="card">
         <div class="card-body">
-      <%= link_to recipient.name, recipient_path(recipient)  %>
+          <%= link_to recipient.name, recipient_path(recipient)  %>
         </div>
       </div>
     </p>

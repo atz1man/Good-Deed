@@ -18,6 +18,7 @@ html * {
 .title-blue {
   color: #004274;
   font-family: 'Playfair Display', serif;
+  font-size: 40px;
 }
 
 //This is for sayings on the page and also names of homeless
@@ -29,12 +30,21 @@ html * {
   font-weight: bolder;
 }
 
+.bold-numbers {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Work Sans', sans-serif;
+  padding: 20px;
+  text-align: center;
+}
 
 .p-white {
   color: white;
   font-size: 20px;
   font-family: 'Work Sans', sans-serif;
   padding: 20px;
+  text-align: center;
 }
 
 .p-orange{
@@ -42,4 +52,5 @@ html * {
   font-size: 20px;
   font-family: 'Work Sans', sans-serif;
   padding: 20px;
+  text-align: center;
 }
