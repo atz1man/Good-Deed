@@ -1,25 +1,27 @@
-<h1>Show page for recipient</h1>
+<div class="profile-top">
 
-<% if admin?  %>
-  <%= link_to 'edit', edit_recipient_path %>
-  <%= link_to 'remove', recipient_path(@recipient), data: { "turbo-method": :delete, "turbo-confirm": "are you sure?"} %>
-<% end  %>
+ <%=image_tag "https://res.cloudinary.com/dl9jjyyew/image/upload/v1662643947/GoodDeedWhite_ufm7vi.png", style: 'height:auto;width:90%;', class: "logo-title" %>
 
-<% if !admin?  %>
-  <%= render "new_donation", donation: @donation %>
-<% end %>
+  <h1 class="title-white"><%= @recipient.name %></h1>
 
-<% if @recipient.photo.key.present?%>
-  <%= cl_image_tag @recipient.photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+  <% if admin?  %>
+    <%= link_to 'edit', edit_recipient_path %>
+    <%= link_to 'remove', recipient_path(@recipient), data: { "turbo-method": :delete, "turbo-confirm": "are you sure?"} %>
+  <% end  %>
 
-<p><%= @recipient.name %></p>
-<p><%= @recipient.bio %></p>
+  <% if !admin?  %>
+    <%= render "new_donation", donation: @donation %>
+  <% end %>
 
-<% str = cl_image_path "qr_code#{@recipient.id}.png" %>
-<% newPath = str.sub /\/v\d*\/development/, '' %>
-<img src="<%= newPath %>" alt="qr-code">
+  <% if @recipient.photo.key.present?%>
+    <%= cl_image_tag @recipient.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
 
-<p>read more btn to open a modal with more info</p>
-<p>big donate button to take you to donate page</p>
-<p>about good deed button to take you to home page</p>
+  <p><%= @recipient.name %></p>
+  <p><%= @recipient.bio %></p>
+
+  <% str = cl_image_path "qr_code#{@recipient.id}.png" %>
+  <% newPath = str.sub /\/v\d*\/development/, '' %>
+  <img src="<%= newPath %>" alt="qr-code">
+
+</div>
