@@ -134,6 +134,7 @@ puts "creating donations"
   puts "donation created"
 end
 
+
 # 3 Second Recipient
 1.times do
   recipient = Recipient.create(
@@ -183,13 +184,6 @@ puts "creating donations"
   )
   puts "donation created"
 end
-
-
-
-
-
-
-
 
 puts "------------------"
 puts "finished creating everything"

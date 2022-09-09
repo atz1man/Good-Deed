@@ -1,1 +1,9 @@
 // Specific CSS for your home-page
+label {
+  cursor: pointer;
+}
+#donate {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}

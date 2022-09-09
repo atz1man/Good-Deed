@@ -1,8 +1,5 @@
 <div class="home-top">
-  <%= image_tag "GoodDeedBlack", style: 'height:auto;width:90%;', class: "logo-title" %>
-</div>
-
-<div class="home-btm">
+  <%=image_tag "https://res.cloudinary.com/dl9jjyyew/image/upload/v1662643947/GoodDeedWhite_ufm7vi.png", style: 'height:auto;width:90%;', class: "logo-title" %>
   <div class="about-text">
     <p class = "p-white">
       Good Deed are a wonderful charity who work with homeless people to help get them off the street.
@@ -14,13 +11,19 @@
   </div>
 
   <div>
-  <%# This root path needs to be changed when we have a create donation page i think? %>
+    <%# This root path needs to be changed when we have a create donation page i think? %>
     <%= link_to "Read more", root_path, class: "btn-blue-sml d-flex" %>
   </div>
-
-  <div class="btm-btm">
-  <%# This root path needs to be changed when we have a create donation page i think? %>
-    <%= link_to "Donate", root_path, class: "btn-orange-lrg" %>
-    <input type="file" accept="image/*" capture="camera">
-  </div>
+</div>
+<% if user_signed_in? && !admin? %>
+    <div class="home-bottom">
+      <label for="donate" class="btn-orange-lrg">Donate</label>
+      <input type="file" name="photo" id="donate">
+    </div>
+  <% else %>
+    <div class="home-bottom">
+        <label for="My People" class="btn-orange-lrg">My People</label>
+        <input type="file" name="photo" id="my_peolple">
+    </div>
+  <% end %>
 </div>
