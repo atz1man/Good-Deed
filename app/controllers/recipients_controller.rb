@@ -58,7 +58,6 @@ class RecipientsController < ApplicationController
   end
 end
 
-
 def create_pictures
   photos = params.dig(:recipient, :pictures) || []
   photos.each do |photo|
