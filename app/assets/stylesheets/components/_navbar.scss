@@ -3,19 +3,16 @@ $orange-gd: #F98D44;
 $blue-gd: #004274;
 $green-gd: #78D9B3;
 
-
-.container-fluid{
-  background-color: #78D9B3;
-}
-.navbar-lewagon {
+.navbar {
   justify-content: space-between;
-  background: #78D9B3;
+  background-color: #78D9B3;
+  text-decoration: none;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-item {
+  text-decoration: none;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-brand img {
   width: 40px;
 }
