@@ -10,14 +10,18 @@
     </p>
   </div>
 
-  <div>
+  <div class="flex">
     <%# This is for a modal or scroll down %>
-    <%= link_to "Read more", root_path, class: "btn-blue-sml d-flex" %>
+    <!-- Button trigger modal -->
+  <button type="button" class="btn-blue-sml" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Read More
+  </button>
+
   </div>
 </div>
+
 <%# if no one is logged in %>
   <% if !user_signed_in? %>
-    <div class="home-bottom">
     <%# show the donate button which will open camera %>
       <label for="donate" class="btn-orange-lrg">Donate</label>
       <input type="file" name="photo" id="donate">
@@ -35,4 +39,24 @@
       <%= link_to "My People", recipients_path, class: "btn-blue-sml d-flex" %>
     </div>
   <% end %>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Good Deed</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Good Deed are a wonderful charity who work with homeless people to help get them off the street.
+        80% of people say they are more likely to donate to the homeless if they knewGood Deed are a wonderful charity who work with homeless people to help get them off the street.
+        80% of people say they are more likely to donate to the homeless if they knewGood Deed are a wonderful charity who work with homeless people to help get them off the street.
+        80% of people say they are more likely to donate to the homeless if they knewGood Deed are a wonderful charity who work with homeless people to help get them off the street.
+        80% of people say they are more likely to donate to the homeless if they knewGood Deed are a wonderful charity who work with homeless people to help get them off the street.
+        80% of people say they are more likely to donate to the homeless if they knew
+      </div>
+    </div>
+  </div>
 </div>
