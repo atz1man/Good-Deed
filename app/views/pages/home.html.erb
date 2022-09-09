@@ -15,13 +15,15 @@
     <%= link_to "Read more", root_path, class: "btn-blue-sml d-flex" %>
   </div>
 </div>
-
-<div class="home-bottom">
-  <%# This root path needs to be changed something like this - new_recipient_donation_path(recipient[id]) %>
-  <%# saying no route matches for this path? %>
-  <%# <%= link_to "donate", new_recipient_donation_path %>
-  <%# /recipients/:recipient_id/donations/new(.:format) %>
-  <label for="donate" class="btn-orange-lrg">Donate</label>
-  <input type="file" name="photo" id="donate">
-  </div>
+<% if user_signed_in? && !admin? %>
+    <div class="home-bottom">
+      <label for="donate" class="btn-orange-lrg">Donate</label>
+      <input type="file" name="photo" id="donate">
+    </div>
+  <% else %>
+    <div class="home-bottom">
+        <label for="My People" class="btn-orange-lrg">My People</label>
+        <input type="file" name="photo" id="my_peolple">
+    </div>
+  <% end %>
 </div>
