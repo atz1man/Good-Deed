@@ -14,23 +14,21 @@
     <% end %>
   </div>
 
-
 <div class="container">
   <div class="cards">
 
- <% if @user.donations.present? %>
+    <% if @donations.present? %>
       <% @donations.each do |donation| %>
         <p>
+          <% if Recipient.where(donation.recipient_id).profile_photo.present? %>
+            <%= cl_image_tag Recipient.where(donation.recipient_id).profile_photo.key
           <%= link_to "Show recipient", recipient_path(donation.recipient_id)  %>
         </p>
       <% end %>
     <% end %>
 
-
 <% if @user.admin? %>
-
   <%= link_to 'new recipient', new_recipient_path  %>
-
   <% @recipients.each do |recipient| %>
     <p>
     <br>
