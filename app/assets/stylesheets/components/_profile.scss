@@ -2,10 +2,6 @@ $orange-gd: #F98D44;
 $blue-gd: #004274;
 $green-gd: #78D9B3;
 
-.logo-profile{
-  display: flex;
-  justify-content: center;
-}
 
 .profile-top{
   margin: auto;
@@ -13,12 +9,17 @@ $green-gd: #78D9B3;
   background-color: #78D9B3;
 }
 
-.admin-prof {
-  text-decoration: none;
+.prof-qr {
+  border-radius: 15px;
+  width: 30px;
 }
 
+.prof-img {
 
-
+  border-radius: 25px;
+  width: 70%;
+  height: 70%;
+}
 // THIS IS ALL THE CSS FOR THE PROFILE USER PAGE - DONT NEED FOR NOW
 
 // // hello, picture, button and quote
