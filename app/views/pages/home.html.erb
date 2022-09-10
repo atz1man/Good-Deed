@@ -23,8 +23,27 @@
 <%# if no one is logged in %>
   <% if !user_signed_in? %>
     <%# show the donate button which will open camera %>
+     <div class="d-flex justify-content-center">
       <label for="donate" class="btn-orange-lrg">Donate</label>
       <input type="file" name="photo" id="donate">
+      </div>
+       <div class="wrapper">
+        <div class = "container">
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="d-flex justify-content-center">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    It has survived not only five centuries, but also the leap into electronic typesetting,
+       remaining essentially unchanged. It was popularised in the 1960s with the release of
+   Letraset sheets containing Lorem Ipsum passages, and more recently with
+    desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+     </p>
+        </div>
+        </div>
 <%# if the user is signed in and not an admin %>
     <% elsif user_signed_in? && !admin? %>
       <%# show a link to my donations so i can see them all %>

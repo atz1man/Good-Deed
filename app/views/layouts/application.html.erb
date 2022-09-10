@@ -19,10 +19,12 @@
   </head>
 
   <body>
+  <div class="wrapper">
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
     <%= yield %>
     <%# realised the footer is only on one page so maybe best to not have one %>
     <%# <%= render "shared/footer" %>
+    </div>
   </body>
 </html>
