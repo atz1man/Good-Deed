@@ -56,8 +56,13 @@ html * {
   color: #004274;
   font-size: 25px;
   font-family: 'Work Sans', sans-serif;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
+  text-decoration: none;
+}
+
+.p-blue-bigger a {
+  text-decoration: none;
 }
 
 .p-orange{
@@ -72,4 +77,8 @@ html * {
   color:#004274;
   font-size: 15px;
   font-family: 'Work Sans', sans-serif;
+}
+
+.link-to a {
+  text-decoration: none;
 }

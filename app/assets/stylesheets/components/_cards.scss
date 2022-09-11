@@ -1,33 +1,29 @@
-.card-category {
-  background-size: cover;
-  background-position: center;
-  height: 180px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgb(130, 187, 133);
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
+$orange-gd: #F98D44;
+$blue-gd: #004274;
+$green-gd: #78D9B3;
 
-.aaa-card{
-  height: 200px;
-  width: 50%;
-  background-color: rgb(130, 187, 133);
-  justify-content: center;
-
-}
 .cards {
   padding-top: 15px;
 
 }
 
-.card{
-  text-decoration: none;
-  border: 1px solid white;
+.card {
+  margin: 10px auto;
+  // border: 4px solid #004274;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  font-weight: bold;
+}
+
+.card img {
+  width: 85%;
+  height: auto;
+  margin: auto;
+}
+
+.row {
+  width: 80%;
 }
 
 // .cards {
@@ -37,17 +33,3 @@
 //   // grid-template-columns: 1fr 1fr 1fr;
 //   // grid-gap: 16px;
 //}
-
-// // Smallest device
-// @media (min-width: 100px) and (max-width: 575px) {
-//   .cards {
-//     grid-template-columns: 1fr;
-//   }
-// }
-
-// // Small devices (landscape phones, 576px and up)
-// @media (min-width: 576px) {
-//   .cards {
-//     grid-template-columns: 1fr;
-//   }
-// }
