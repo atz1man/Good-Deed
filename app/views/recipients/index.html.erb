@@ -1,44 +1,53 @@
 
-
+<%# title to welcome the admin with their name %>
 <div class="profile-top">
   <h1 class="title-white">Hello <%= current_user.first_name %> </h1>
-    <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered my-3", alt: "avatar-bordered" %>
-    <%= link_to "My donations", "", class: "btn-blue-lrg py-3" %>
 
+    <%# if you are an admin you can create a profile and search %>
+  <% if admin? %>
+    <div >
+      <%= link_to "Create a profile", new_recipient_path, class: "btn-blue-sml" %>
+    </div>
+    <div>
     <%= form_with url: recipients_path, method: :get, class: "search d-flex" do %>
       <%= text_field_tag :query,
         params[:query],
         class: "search-box",
-        placeholder: "Search for profiles" %>
-      <%= submit_tag "🔍", class: "search-mag" %>
+        placeholder: "Search for profiles 🔍" %>
+      <%= submit_tag "", class: "search-mag" %>
+    </div>
     <% end %>
-  </div>
-
+  <% end %>
+</div>
 
 <div class="container">
-  <div class="cards">
-
- <% if @user.donations.present? %>
-      <% @donations.each do |donation| %>
-        <p>
-          <%= link_to "Show recipient", recipient_path(donation.recipient_id)  %>
-        </p>
+<div class="d-flex justify-content-center">
+  <div class= "row" class="cards">
+    <div class="column">
+      <% if @user.donations.present? %>
+          <% @donations.each do |donation| %>
+            <% recipient = Recipient.find(donation.recipient_id) %>
+                <div class="card">
+                  <% if recipient.photo.key.present? %>
+                    <%= cl_image_tag recipient.photo.key, height: 300, width: 400, crop: :fill %>
+                  <% end %>
+                  <%= link_to recipient.name, recipient_path(donation.recipient_id)  %>
+                </div>
+                </div>
+            <% end %>
       <% end %>
-    <% end %>
 
-
-<% if @user.admin? %>
-
-  <%= link_to 'new recipient', new_recipient_path  %>
-
-  <% @recipients.each do |recipient| %>
-    <p>
-    <br>
-      <div class="card">
-        <div class="card-body">
-          <%= link_to recipient.name, recipient_path(recipient)  %>
-        </div>
-      </div>
-    </p>
-  <% end %>
-<% end %>
+      <% if @user.admin? %>
+          <%= link_to 'new recipient', new_recipient_path  %>
+          <% @recipients.each do |recipient| %>
+            <div class = "card">
+              <% if recipient.photo.key.present? %>
+                  <%= cl_image_tag recipient.photo.key, height: 300, width: 400, crop: :fill %>
+                <% end %>
+                <%= link_to recipient.name, recipient_path(recipient)  %>
+            </div>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

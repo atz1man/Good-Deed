@@ -1,25 +1,67 @@
-<h1>Show page for recipient</h1>
+<div class="profile-top">
 
-<% if admin?  %>
-  <%= link_to 'edit', edit_recipient_path %>
-  <%= link_to 'remove', recipient_path(@recipient), data: { "turbo-method": :delete, "turbo-confirm": "are you sure?"} %>
-<% end  %>
+  <%# <%=image_tag "https://res.cloudinary.com/dl9jjyyew/image/upload/v1662643947/GoodDeedWhite_ufm7vi.png", style: 'height:auto;width:30%;', class: "logo-profile" %>
 
-<% if !admin?  %>
-  <%= render "new_donation", donation: @donation %>
+  <h1 class="title-white">
+  <%= @recipient.name %>
+  </h1>
+
+  <%# admin you can edit and delete%>
+  <div class="admin-prof">
+    <% if admin?  %>
+    <%= link_to '✏️', edit_recipient_path%>
+    <%= link_to '🚮', recipient_path(@recipient), data: { "turbo-method": :delete, "turbo-confirm": "are you sure?"} %>
+  <% end  %>
+  </div>
+
+<%# if the recipient has a photo show their picture %>
+  <% if @recipient.photo.key.present?%>
+    <%= cl_image_tag @recipient.photo.key, height: 300, width: 400, crop: :fill, class: "prof-img" %>
+  <% end %>
+
+  <p class ="p-white-bigger"><%= @recipient.bio %></p>
+
+<%# QR code that has been created %>
+  <div class="m-0">
+    <% str = cl_image_path "qr_code#{@recipient.id}.png" %>
+    <% newPath = str.sub /\/v\d*\/production/, '' %>
+    <img src="<%= newPath %>" alt="qr-code" class="prof-qr">
+  </div>
+</div>
+
+
+<% if !admin? %>
+  <div class="d-flex flex-column">
+    <div class="m-auto">
+      <%# show a link to my donations so i can see them all %>
+      <label for="donate" class="btn-orange-lrg">Donate</label>
+      <input type="file" name="photo" id="donate">
+    </div>
+    <div class="m-auto">
+      <%= link_to "About Good Deed", root_path, class: "btn-blue-sml" %>
+    </div>
+  </div>
 <% end %>
 
-<% if @recipient.photo.key.present?%>
-  <%= cl_image_tag @recipient.photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
 
-<p><%= @recipient.name %></p>
-<p><%= @recipient.bio %></p>
 
-<% str = cl_image_path "qr_code#{@recipient.id}.png" %>
-<% newPath = str.sub /\/v\d*\/development/, '' %>
-<img src="<%= newPath %>" alt="qr-code">
-
-<p>read more btn to open a modal with more info</p>
-<p>big donate button to take you to donate page</p>
-<p>about good deed button to take you to home page</p>
+<%# CODE FOR A MODAL TO READ MORE BUT SHOULD ONLY NEED IT FOR USERS NOT ADMIN %>
+<%#
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Good Deed</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Good Deed are a wonderful charity who work with homeless people to help get them off the street.
+        80% of people say they are more likely to donate to the homeless if they knewGood Deed are a wonderful charity who work with homeless people to help get them off the street.
+        80% of people say they are more likely to donate to the homeless if they knewGood Deed are a wonderful charity who work with homeless people to help get them off the street.
+        80% of people say they are more likely to donate to the homeless if they knewGood Deed are a wonderful charity who work with homeless people to help get them off the street.
+        80% of people say they are more likely to donate to the homeless if they knewGood Deed are a wonderful charity who work with homeless people to help get them off the street.
+        80% of people say they are more likely to donate to the homeless if they knew
+      </div>
+    </div>
+  </div>
+</div> %>

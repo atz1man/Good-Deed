@@ -46,21 +46,6 @@ $green-gd: #78D9B3;
   background-color: #2176b6;
   color:white;
 }
-// this is the same as the larger blue button - trying to replace this but dont want to loose anything
-.btn-flat {
-  color: white;
-  height: 100px;
-  width: 200px;
-  padding: 8px 24px;
-  border-radius: 100px;
-  background: #004274;
-  transition: background 0.3s ease;
-}
-
-.btn-flat:hover {
-  background: #4D04C4;
-  color: white;
-}
 
 
 // blue button smaller version
