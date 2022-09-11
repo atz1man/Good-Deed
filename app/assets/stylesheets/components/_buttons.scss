@@ -40,6 +40,8 @@ $green-gd: #78D9B3;
   font-family: 'Work Sans', sans-serif;
   letter-spacing: 1px;
   box-shadow: 1px 1px 1px 0.5px grey;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .btn-blue-lrg:hover {
@@ -51,7 +53,7 @@ $green-gd: #78D9B3;
 // blue button smaller version
 
 .btn-blue-sml {
-  margin: 20px;
+  margin: 10px;
   background-color: #004274;
   border: none;
   border-radius: 100px;

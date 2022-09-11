@@ -19,6 +19,9 @@ html * {
   color: #004274;
   font-family: 'Playfair Display', serif;
   font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+
 }
 
 //This is for sayings on the page and also names of homeless
@@ -39,16 +42,18 @@ html * {
   text-align: center;
 }
 
-.p-white {
-  color: white;
+.p-blue {
+  color:#004274;
   font-size: 20px;
   font-family: 'Work Sans', sans-serif;
   padding: 11px;
+  margin-top: 10px;
+  margin-bottom: 0em;
   text-align: center;
 }
 
-.p-white-bigger {
-  color: white;
+.p-blue-bigger {
+  color: #004274;
   font-size: 25px;
   font-family: 'Work Sans', sans-serif;
   padding: 20px;
