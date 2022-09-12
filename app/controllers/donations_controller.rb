@@ -12,7 +12,7 @@ class DonationsController < ApplicationController
     @donation.recipient = @recipient
     @donation.user = current_user
     @donation.save!
-    redirect_to root_path
+    redirect_to recipients_path
   end
 
   def confirmation
