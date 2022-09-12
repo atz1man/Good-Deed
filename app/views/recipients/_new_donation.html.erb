@@ -1,28 +1,18 @@
-<div class ="container" >
+<div class ="container" data-controller="amount">
   <h1 class="title-blue">Hello <%= user_name %> </h1>
   <p class="p-blue"> Enter the amount you would like to donate</p>
-    <%= simple_form_for([@recipient, @donation]) do |f|  %>
+
+  <%= simple_form_for([@recipient, @donation]) do |f| %>
     <%= f.input :amount %>
     <%= f.input :message %>
-      <ul>
-        <button type="button" class="btn-orange-sml bold-numbers">£3</button>
-        <button type="button" class="btn-orange-sml bold-numbers">£5</button>
-        <button type="button" class="btn-orange-sml bold-numbers">£7</button>
-      </ul>
-        <%# <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" /> %>
-        <label class="form-check-label" for="flexCheckDefault">Click to add gift aid</label>
-    <%= f.submit "Confirm" %>
-    <% end %>
+    <ul>
+      <button data-action="click->amount#donate" type="button" class="btn-orange-sml bold-numbers">£3</button>
+      <button data-action="click->amount#donate"type="button" class="btn-orange-sml bold-numbers">£5</button>
+      <button data-action="click->amount#donate" type="button" class="btn-orange-sml bold-numbers">£7</button>
+    </ul>
+    <div class="form-actions" id= "new_donation">
+      <%= f.button :submit, "change a life!" %>
+    </div>
+  <% end %>
+
 </div>
-
-
-<%# <script> function moveNumbers(num) {
-    var txt=document.getElementById("result").value;
-    txt=txt + num;
-    document.getElementById("result").value=txt;
-    }
-<input type="button" value="1" name="no" onclick="moveNumbers(this.value)">
-<input type="button" value="2" name="no" onclick="moveNumbers(this.value)">
-<input type="button" value="3" name="no" onclick="moveNumbers(this.value)">
-<input type="text" id="result" size="20">
-</script> %>
