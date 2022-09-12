@@ -6,6 +6,6 @@ export default class extends Controller {
   donate(e){
     let amount = parseInt(e.target.innerText.split("").slice(1).join(""))
     document.querySelector('#donation_amount').value = amount;
-    this.form, "submit"
+    document.querySelector('#new_donation').submit()
   }
 }
