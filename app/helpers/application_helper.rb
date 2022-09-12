@@ -1,6 +1,8 @@
 module ApplicationHelper
   def admin?
-    current_user.admin?
+    if current_user.present?
+      current_user.admin?
+    end
   end
 
   def user_name
