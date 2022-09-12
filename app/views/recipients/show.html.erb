@@ -1,45 +1,64 @@
 <div class="profile-top">
+  <%# go back to previous page (index) %>
+  <div class ="link-to justify-content-left d-flex mx-3">
+    <%= link_to recipients_path do %>
+    <i class="fa-solid fa-backward"></i>
+    <% end %>
+  </div>
+  <%# recipient name %>
   <h1 class="title-white"> <%= @recipient.name %> </h1>
+
+  <%# if the recipient has a photo show their picture %>
+  <% if @recipient.photo.key.present?%>
+    <%= cl_image_tag @recipient.photo.key, height: 300, width: 400, crop: :fill, class: "prof-img" %>
+  <% end %>
 
   <%# admin you can edit and delete%>
   <div class="admin-prof">
     <% if admin?  %>
-    <%= link_to 'edit', edit_recipient_path%>
-    <%= link_to 'delete', recipient_path(@recipient), data: { "turbo-method": :delete, "turbo-confirm": "are you sure?"} %>
-  <% end  %>
-</div>
-
-<%# if the recipient has a photo show their picture %>
-<% if @recipient.photo.key.present?%>
-  <%= cl_image_tag @recipient.photo.key, height: 300, width: 400, crop: :fill, class: "prof-img" %>
-<% end %>
-
-
-<p class ="p-blue"><%= @recipient.bio %></p>
-
-<%# QR code that has been created %>
-<% if admin? %>
-  <div class="m-0">
-    <% str = cl_image_path "qr_code#{@recipient.id}.png" %>
-    <%# localhost:%>
-    <% newPath = str.sub /\/v\d*\/development/, '' %>
-    <%# heroku%>
-    <%# <% newPath = str.sub /\/v\d*\/production/, '' %>
-    <img src="<%= newPath %>" alt="qr-code">
+      <div class="link-to">
+      <%# edit a profile %>
+      <%= link_to edit_recipient_path do %>
+      <i class="fa-solid fa-pen-to-square"></i>
+      <% end %>
+      <%# delete a profile %>
+      <%= link_to recipient_path(@recipient), data: { "turbo-method": :delete, "turbo-confirm": "are you sure?"} do %>
+      <i class="fa-solid fa-trash"></i>
+      <% end %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+  <%# end if admin %>
 
-<% if !admin? %>
-  <div class="d-flex sflex-column">
-    <div class="m-auto">
-      <%# show a link to my donations so i can see them all %>
-      <%= render "new_donation", donation: @donation %>
+
+  <%# recipient bio %>
+  <p class ="p-blue"><%= @recipient.bio %></p>
+
+  <%# if admin show QR code that has been created %>
+  <% if admin? %>
+    <div class="m-0">
+      <% str = cl_image_path "qr_code#{@recipient.id}.png" %>
+      <%# localhost:%>
+      <% newPath = str.sub /\/v\d*\/development/, '' %>
+      <%# heroku%>
+      <%# <% newPath = str.sub /\/v\d*\/production/, '' %>
+      <img src="<%= newPath %>" alt="qr-code">
     </div>
-    <div class="m-auto">
-      <%= link_to "About Good Deed", root_path, class: "btn-blue-sml" %>
+  <% end %>
+
+  <%#  if user you will be able to donate here%>
+  <% if !admin? %>
+    <div class="d-flex sflex-column">
+      <div class="m-auto">
+        <%# show a link to my donations so i can see them all %>
+        <%# render "new_donation" %>
+        <%= render "new_donation", donation: @donation %>
+      </div>
+      <div class="m-auto">
+        <%= link_to "About Good Deed", root_path, class: "btn-blue-sml" %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
 
 <%# CODE FOR A MODAL TO READ MORE BUT SHOULD ONLY NEED IT FOR USERS NOT ADMIN %>
 <%#
