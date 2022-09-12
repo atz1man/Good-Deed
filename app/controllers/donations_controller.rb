@@ -15,6 +15,10 @@ class DonationsController < ApplicationController
     redirect_to root_path
   end
 
+  def confirmation
+    @recipient = Recipient.find(params[:recipient_id])
+  end
+
   private
 
   def donation_params
