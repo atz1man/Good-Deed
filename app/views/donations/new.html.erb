@@ -1,25 +1,15 @@
-<div class="donate-top">
+<div class="donate-top" data-controller="amount">
   <h1 class="title-blue">Hello <%= user_name %> </h1>
   <p class="p-blue"> Enter the amount you would like to donate</p>
     <%= simple_form_for([@recipient, @donation]) do |f|  %>
-    <%= f.input :amount, class: '' %>
+    <%= f.input :amount, class: '',input_html: { data: {amount_target: "input"}} %>
       <ul>
-        <button type="button" class="btn-orange-sml bold-numbers">£3</button>
-        <button type="button" class="btn-orange-sml bold-numbers">£5</button>
-        <button type="button" class="btn-orange-sml bold-numbers">£7</button>
+        <button type="button" class="btn-orange-sml bold-numbers" data-action="click->amount#insertamount">£3</button>
+        <button type="button" class="btn-orange-sml bold-numbers"data-action="click->amount#insertamount">£5</button>
+        <button type="button" class="btn-orange-sml bold-numbers"data-action="click->amount#insertamount">£7</button>
       </ul>
         <%# <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" /> %>
         <label class="form-check-label" for="flexCheckDefault">Click to add gift aid</label>
 </div>
     <%= f.submit "Confirm" %>
   <% end %>
-<script> function moveNumbers(num) {
-    var txt=document.getElementById("result").value;
-    txt=txt + num;
-    document.getElementById("result").value=txt;
-    }
-</script>
-Select numbers: <br> <input type="button" value="1" name="no" onclick="moveNumbers(this.value)">
-<input type="button" value="2" name="no" onclick="moveNumbers(this.value)">
-<input type="button" value="3" name="no" onclick="moveNumbers(this.value)">
-<input type="text" id="result" size="20">
