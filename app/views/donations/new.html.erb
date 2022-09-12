@@ -1,7 +1,11 @@
-<div class="donate-top">
+<div class="donate-top" data-controller="payment">
   <h1 class="title-blue">Hello <%= user_name %> </h1>
   <p class="p-blue"> Enter the amount you would like to donate</p>
-    <%= simple_form_for([@recipient, @donation]), html: { id: :donation_form} do |f|  %>
+
+
+    <%= simple_form_for([@recipient, @donation], html: { data: { payment_target: "form"}, data: { action: "submit -> payment#preventRefresh"},class: "form"} ) do |f|  %>
+
+    <%#= simple_form_for([@recipient, @donation], html: { id: :donation_form, data: { payment_target: "form"}, data: { action: "submit -> payment#preventRefresh"},class: "form"})  do |f|  %>
     <%= f.input :amount, class: '' %>
       <ul>
         <button type="button" class="btn-orange-sml bold-numbers">£3</button>
@@ -10,6 +14,7 @@
       </ul>
         <%# <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" /> %>
         <label class="form-check-label" for="flexCheckDefault">Click to add gift aid</label>
-</div>
     <%= f.submit "Confirm" %>
   <% end %>
+
+</div>
