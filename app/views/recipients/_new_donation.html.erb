@@ -1,7 +1,18 @@
-<div class ="container">
-<br>
-  <%= simple_form_for [@recipient, @donation] do |f|  %>
+<div class ="container" data-controller="amount">
+  <h1 class="title-blue">Hello <%= user_name %> </h1>
+  <p class="p-blue"> Enter the amount you would like to donate</p>
+
+  <%= simple_form_for([@recipient, @donation]) do |f| %>
     <%= f.input :amount %>
-    <%= f.submit "Confirm" %>
+    <%= f.input :message %>
+    <ul>
+      <button data-action="click->amount#donate" type="button" class="btn-orange-sml bold-numbers">£3</button>
+      <button data-action="click->amount#donate"type="button" class="btn-orange-sml bold-numbers">£5</button>
+      <button data-action="click->amount#donate" type="button" class="btn-orange-sml bold-numbers">£7</button>
+    </ul>
+    <div class="form-actions" id= "new_donation">
+      <%= f.button :submit, "change a life!" %>
+    </div>
   <% end %>
+
 </div>

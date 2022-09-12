@@ -34,6 +34,7 @@ class DonationsController < ApplicationController
   end
 
   def confirmation
+    @donation = Recipient.find(params[:recipient_id]).donations.last.amount
     @recipient = Recipient.find(params[:recipient_id])
   end
 
