@@ -13,18 +13,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital@0;1&display=swap" rel="stylesheet">
-
+    <script src="https://kit.fontawesome.com/866e025c03.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body>
-  <div class="wrapper">
+   <div class="wrapper">
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
     <%= yield %>
     <%# realised the footer is only on one page so maybe best to not have one %>
     <%# <%= render "shared/footer" %>
+     </div>
     </div>
   </body>
 </html>

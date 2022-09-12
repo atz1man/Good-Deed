@@ -7,12 +7,24 @@ $green-gd: #78D9B3;
   justify-content: space-between;
   background-color: #78D9B3;
   text-decoration: none;
+  // margin-top: 15px;
 }
 
 .navbar-item {
-  text-decoration: none;
+  margin-right: 20px;
 }
 
 .navbar-brand img {
-  width: 40px;
+  width: 60px;
+  margin-left: 20px;
+}
+
+.fa-right-from-bracket{
+  font-size: 20px;
+}
+.fa-right-to-bracket {
+  font-size: 20px;
+}
+.fa-user-plus {
+  font-size: 20px;
 }

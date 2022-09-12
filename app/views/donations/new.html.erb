@@ -1,6 +1,6 @@
 <div class="donate-top">
   <h1 class="title-blue">Hello <%= user_name %> </h1>
-  <p class="p-white"> Enter the amount you would like to donate</p>
+  <p class="p-blue"> Enter the amount you would like to donate</p>
     <%= simple_form_for([@recipient, @donation]) do |f|  %>
     <%= f.input :amount, class: '' %>
       <ul>
