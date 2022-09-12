@@ -122,15 +122,15 @@ puts "------------------"
 puts "recipient profiles have been created"
 puts "------------------"
 
-puts "creating donations"
-5.times do
-  Donation.create(
-    amount: rand(3..10),
-    user: user1,
-    recipient: Recipient.first
-  )
-  puts "donation created"
-end
+# puts "creating donations"
+# 5.times do
+#   Donation.create(
+#     amount: rand(3..10),
+#     user: user1,
+#     recipient: Recipient.first
+#   )
+#   puts "donation created"
+# end
 
 
 # 3 Second Recipient

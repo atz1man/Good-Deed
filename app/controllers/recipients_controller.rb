@@ -1,6 +1,7 @@
 class RecipientsController < ApplicationController
   def index
     if current_user.present?
+      @user = current_user
       if current_user.admin?
         if params[:query].present?
           @recipients = Recipient.where(user: current_user).where("name ILIKE ?", "%#{params[:query]}%").reverse
