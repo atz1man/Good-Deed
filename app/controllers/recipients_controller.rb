@@ -1,15 +1,17 @@
 class RecipientsController < ApplicationController
   def index
-    @user = current_user
-    if @user.admin?
-      if params[:query].present?
-        @recipients = Recipient.where(user: current_user).where("name ILIKE ?", "%#{params[:query]}%").reverse
-      else
-        @recipients = Recipient.where(user: current_user).reverse
+    if current_user.present?
+      if current_user.admin?
+        if params[:query].present?
+          @recipients = Recipient.where(user: current_user).where("name ILIKE ?", "%#{params[:query]}%").reverse
+        else
+          @recipients = Recipient.where(user: current_user).reverse
+        end
       end
+    else
+      all_donations = Donation.where(user: current_user)
+      @donations = all_donations.select(:recipient_id).distinct.reverse
     end
-    all_donations = Donation.where(user: current_user)
-    @donations = all_donations.select(:recipient_id).distinct.reverse
   end
 
   def show

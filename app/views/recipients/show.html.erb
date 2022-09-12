@@ -15,7 +15,7 @@
 <% end %>
 
 
-  <p class ="p-blue"><%= @recipient.bio %></p>
+<p class ="p-blue"><%= @recipient.bio %></p>
 
 <%# QR code that has been created %>
 <% if admin? %>
@@ -33,7 +33,6 @@
   <div class="d-flex sflex-column">
     <div class="m-auto">
       <%# show a link to my donations so i can see them all %>
-      <%# render "new_donation" %>
       <%= render "new_donation", donation: @donation %>
     </div>
     <div class="m-auto">

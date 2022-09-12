@@ -12,11 +12,11 @@ class DonationsController < ApplicationController
     @donation.recipient = @recipient
     @donation.user = current_user
     @donation.save!
-    redirect_to recipients_path
+    redirect_to confirmation_path
   end
 
   def confirmation
-    @recipient = Recipient.find(params[:recipient_id])
+
   end
 
   private

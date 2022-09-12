@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   get "users/:id", to: "users#show", as: :user
 
   resources :recipients do
-    resources :donations, only: %i[new create] do
-      get "confirmation", to: "donations#confirmation", as: :confirmation
-    end
+    resources :donations, only: %i[new create]
   end
+
+  get "confirmation", to: "donations#confirmation", as: :confirmation
 end
