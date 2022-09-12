@@ -1,6 +1,8 @@
 <%# title to welcome the admin with their name %>
 <div class="d-flex justify-content-center">
-  <h1 class="title-white">Hello <%= current_user.first_name %> </h1>
+  <% if current_user.present?  %>
+    <h1 class="title-white">Hello <%= current_user.first_name %> </h1>
+  <% end %>
 </div>
   <%# if you are an admin you can create a profile and search %>
   <% if admin? %>

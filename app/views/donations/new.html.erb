@@ -1,7 +1,7 @@
 <div class="donate-top">
   <h1 class="title-blue">Hello <%= user_name %> </h1>
   <p class="p-blue"> Enter the amount you would like to donate</p>
-    <%= simple_form_for([@recipient, @donation]) do |f|  %>
+    <%= simple_form_for([@recipient, @donation]), html: { id: :donation_form} do |f|  %>
     <%= f.input :amount, class: '' %>
       <ul>
         <button type="button" class="btn-orange-sml bold-numbers">£3</button>
@@ -13,4 +13,3 @@
 </div>
     <%= f.submit "Confirm" %>
   <% end %>
-
