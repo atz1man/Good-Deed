@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema[7.0].define(version: 2022_09_12_133401) do
-=======
-ActiveRecord::Schema[7.0].define(version: 2022_09_12_100810) do
->>>>>>> 5854c314a9478b652a0cedc02e26fea3735fb01a
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,15 +44,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_100810) do
 
   create_table "donations", force: :cascade do |t|
     t.integer "amount"
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.bigint "recipient_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
     t.string "checkout_session_id"
-=======
     t.text "message"
->>>>>>> 5854c314a9478b652a0cedc02e26fea3735fb01a
     t.index ["recipient_id"], name: "index_donations_on_recipient_id"
     t.index ["user_id"], name: "index_donations_on_user_id"
   end

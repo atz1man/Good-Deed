@@ -18,7 +18,7 @@ class DonationsController < ApplicationController
       line_items: [{
         price_data: {
           currency: 'gbp',
-          unit_amount: 1000,
+          unit_amount: 10000,
           product_data: {
             name: @recipient.name,
             description: "test"
@@ -31,10 +31,13 @@ class DonationsController < ApplicationController
       cancel_url: root_url
     )
     @donation.update(checkout_session_id: session.id)
+
+    redirect_to recipient_confirmation_path(@recipient, donation: @donation)
   end
 
   def confirmation
-    @donation = Recipient.find(params[:recipient_id]).donations.last.amount
+    # @donation = Recipient.find(params[:recipient_id]).donations.last.amount
+    @donation = Donation.find(params[:donation])
     @recipient = Recipient.find(params[:recipient_id])
   end
 

@@ -2,7 +2,10 @@
   <h1 class="title-blue">Hello <%= user_name %> </h1>
   <p class="p-blue"> Enter the amount you would like to donate</p>
 
-    <%= simple_form_for([@recipient, @donation]), html: { id: :donation_form, data: { payment_target: "form"}, data: { action: "submit -> payment#preventRefresh"},class: "form"} do |f|  %>
+
+    <%= simple_form_for([@recipient, @donation], html: { data: { payment_target: "form"}, data: { action: "submit -> payment#preventRefresh"},class: "form"} ) do |f|  %>
+
+    <%#= simple_form_for([@recipient, @donation], html: { id: :donation_form, data: { payment_target: "form"}, data: { action: "submit -> payment#preventRefresh"},class: "form"})  do |f|  %>
     <%= f.input :amount, class: '' %>
       <ul>
         <button type="button" class="btn-orange-sml bold-numbers">£3</button>
@@ -13,19 +16,5 @@
         <label class="form-check-label" for="flexCheckDefault">Click to add gift aid</label>
     <%= f.submit "Confirm" %>
   <% end %>
-
-<button type="button" id="pay">Click Me!</button>
-
-  <script src="https://js.stripe.com/v3/"></script>
-  <script>
-    const paymentButton = document.getElementById('pay');
-    console.log(paymentButton)
-    paymentButton.addEventListener('click', () => {
-      const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-      stripe.redirectToCheckout({
-        sessionId: '<%= @donation.checkout_session_id %>'
-      });
-    });
-  </script>
 
 </div>
