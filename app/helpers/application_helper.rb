@@ -5,6 +5,7 @@ module ApplicationHelper
     end
   end
 
+
   def user_name
     if current_user.present?
       current_user.first_name
