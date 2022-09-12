@@ -12,7 +12,7 @@ html * {
   color: white;
   font-family: 'Playfair Display', serif;
   font-size: 50px;
-
+  text-align: center;
 }
 // main titles - hello's - blue version
 .title-blue {
@@ -21,7 +21,7 @@ html * {
   font-size: 40px;
   margin-top: 20px;
   margin-bottom: 10px;
-
+  text-align: center;
 }
 
 //This is for sayings on the page and also names of homeless
@@ -31,6 +31,7 @@ html * {
   font-family: 'Work Sans', sans-serif;
   font-style: italic;
   font-weight: bolder;
+  text-align: left;
 }
 
 .bold-numbers {
@@ -49,7 +50,7 @@ html * {
   padding: 11px;
   margin-top: 10px;
   margin-bottom: 0em;
-  text-align: center;
+  text-align: left;
 }
 
 .p-blue-bigger {
@@ -57,7 +58,7 @@ html * {
   font-size: 25px;
   font-family: 'Work Sans', sans-serif;
   padding: 10px;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
 }
 
@@ -70,15 +71,13 @@ html * {
   font-size: 20px;
   font-family: 'Work Sans', sans-serif;
   padding: 20px;
-  text-align: center;
+  text-align: left;
 }
 
-.link-to {
-  color:#004274;
-  font-size: 15px;
-  font-family: 'Work Sans', sans-serif;
-}
 
 .link-to a {
   text-decoration: none;
+  color:#004274;
+  font-size: 15px;
+  font-family: 'Work Sans', sans-serif;
 }

@@ -8,7 +8,7 @@ class RecipientsController < ApplicationController
       else
         @recipients = recipients.all
       end
-
+    end
     all_donations = Donation.where(user: current_user)
     @donations = all_donations.select(:recipient_id).distinct.reverse
   end
