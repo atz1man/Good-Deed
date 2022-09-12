@@ -9,24 +9,24 @@
   <% if user_signed_in? %>
     <% if admin? %>
       <div class="navbar-item link-to">
-        <i class="fa-solid fa-user-plus">
-          <%# create a profile %>
-          <%= link_to "Create profile", new_recipient_path %>
-        </i>
+        <%# create a profile %>
+        <%= link_to new_recipient_path do %>
+          <i class="fa-solid fa-user-plus"></i>
+          <% end %>
       </div>
     <% end %>
       <div class="navbar-item link-to">
-        <i class="fa-solid fa-right-from-bracket">
-          <%# log out %>
-          <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %>
-        </i>
+        <%# log out %>
+        <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <% end %>
       </div>
   <% else %>
     <div class="navbar-item link-to">
-      <i class="fa-solid fa-right-to-bracket">
-        <%# login %>
-        <%= link_to "Login", new_user_session_path %>
-      </i>
+      <%# login %>
+      <%= link_to new_user_session_path do %>
+        <i class="fa-solid fa-right-to-bracket"></i>
+      <% end %>
     </div>
   <% end %>
 </div>
