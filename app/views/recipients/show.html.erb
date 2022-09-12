@@ -39,9 +39,9 @@
     <div class="m-0">
       <% str = cl_image_path "qr_code#{@recipient.id}.png" %>
       <%# localhost:%>
-      <%# newPath = str.sub /\/v\d*\/development/, '' %>
+      <% newPath = str.sub /\/v\d*\/development/, '' %>
       <%# heroku%>
-      <% <% newPath = str.sub /\/v\d*\/production/, '' %>
+      <%# <% newPath = str.sub /\/v\d*\/production/, '' %>
       <img src="<%= newPath %>" alt="qr-code">
     </div>
   <% end %>
