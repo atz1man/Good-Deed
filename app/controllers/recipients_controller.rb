@@ -15,6 +15,8 @@ class RecipientsController < ApplicationController
     end
   end
 
+
+
   def show
     @recipient = Recipient.find(params[:id])
     @donation = Donation.new(recipient: @recipient, user: current_user)

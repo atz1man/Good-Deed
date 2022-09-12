@@ -78,8 +78,11 @@ group :test do
   gem "webdrivers"
 end
 
+gem "stripe"
 
 gem "faker"
 gem "cloudinary"
 gem "rqrcode"
 gem "pg_search"
+gem "money-rails"
+
