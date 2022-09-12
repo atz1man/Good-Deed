@@ -1,7 +1,7 @@
-<div class="donate-top">
+<div class="donate-top" data-controller="payment">
   <h1 class="title-blue">Hello <%= user_name %> </h1>
   <p class="p-blue"> Enter the amount you would like to donate</p>
-    <%= simple_form_for([@recipient, @donation]) do |f|  %>
+    <%= simple_form_for([@recipient, @donation], html: { data: { payment_target: "form"}, data: { action: "submit -> payment#preventRefresh"},class: "form"} ) do |f|  %>
     <%= f.input :amount, class: '' %>
       <ul>
         <button type="button" class="btn-orange-sml bold-numbers">£3</button>
@@ -10,16 +10,21 @@
       </ul>
         <%# <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" /> %>
         <label class="form-check-label" for="flexCheckDefault">Click to add gift aid</label>
-</div>
     <%= f.submit "Confirm" %>
   <% end %>
-<script> function moveNumbers(num) {
-    var txt=document.getElementById("result").value;
-    txt=txt + num;
-    document.getElementById("result").value=txt;
-    }
-</script>
-Select numbers: <br> <input type="button" value="1" name="no" onclick="moveNumbers(this.value)">
-<input type="button" value="2" name="no" onclick="moveNumbers(this.value)">
-<input type="button" value="3" name="no" onclick="moveNumbers(this.value)">
-<input type="text" id="result" size="20">
+
+<button type="button" id="pay">Click Me!</button>
+
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    const paymentButton = document.getElementById('pay');
+    console.log(paymentButton)
+    paymentButton.addEventListener('click', () => {
+      const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+      stripe.redirectToCheckout({
+        sessionId: '<%= @donation.checkout_session_id %>'
+      });
+    });
+  </script>
+
+</div>

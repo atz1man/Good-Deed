@@ -22,7 +22,6 @@
 <%# QR code that has been created %>
   <div class="m-0">
     <% str = cl_image_path "qr_code#{@recipient.id}.png" %>
-
 <%# localhost:%>
 <% newPath = str.sub /\/v\d*\/development/, '' %>
 <%# heroku%>

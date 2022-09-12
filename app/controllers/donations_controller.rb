@@ -12,7 +12,25 @@ class DonationsController < ApplicationController
     @donation.recipient = @recipient
     @donation.user = current_user
     @donation.save!
-    redirect_to root_path
+
+    session = Stripe::Checkout::Session.create(
+      payment_method_types: ['card'],
+      line_items: [{
+        price_data: {
+          currency: 'gbp',
+          unit_amount: 1000,
+          product_data: {
+            name: @recipient.name,
+            description: "test"
+          },
+        },
+        quantity: 1,
+      }],
+      mode: 'payment',
+      success_url:  new_recipient_donation_url(@recipient),
+      cancel_url: root_url
+    )
+    @donation.update(checkout_session_id: session.id)
   end
 
   def confirmation
