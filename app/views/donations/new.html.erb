@@ -1,15 +1,16 @@
-<div class="donate-top" data-controller="amount">
+<div class="donate-top">
   <h1 class="title-blue">Hello <%= user_name %> </h1>
   <p class="p-blue"> Enter the amount you would like to donate</p>
     <%= simple_form_for([@recipient, @donation]) do |f|  %>
-    <%= f.input :amount, class: '',input_html: { data: {amount_target: "input"}} %>
+    <%= f.input :amount, class: '' %>
       <ul>
-        <button type="button" class="btn-orange-sml bold-numbers" data-action="click->amount#insertamount">£3</button>
-        <button type="button" class="btn-orange-sml bold-numbers"data-action="click->amount#insertamount">£5</button>
-        <button type="button" class="btn-orange-sml bold-numbers"data-action="click->amount#insertamount">£7</button>
+        <button type="button" class="btn-orange-sml bold-numbers">£3</button>
+        <button type="button" class="btn-orange-sml bold-numbers">£5</button>
+        <button type="button" class="btn-orange-sml bold-numbers">£7</button>
       </ul>
         <%# <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" /> %>
         <label class="form-check-label" for="flexCheckDefault">Click to add gift aid</label>
 </div>
     <%= f.submit "Confirm" %>
   <% end %>
+

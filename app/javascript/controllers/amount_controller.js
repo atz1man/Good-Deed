@@ -11,7 +11,7 @@ static targets = ["input"]
     // console.log(parseInt(e.target.innerText.split("").slice(1).join("")));
     // this.inputTarget.innerText = amount
     const amount = parseInt(e.target.innerText.split("").slice(1).join(""));
-
+raise
     document.querySelector('#donation_amount').value = amount;
 
   }
