@@ -4,7 +4,6 @@
 require 'faker'
 require "open-uri"
 
-
 puts "cleaning database"
 Donation.destroy_all
 Recipient.destroy_all
@@ -53,9 +52,8 @@ puts "creating recipient profiles"
 1.times do
   recipient = Recipient.create(
     user: admin,
-    name: Faker::FunnyName.name,
-    bio: "I recently became divorced, after I became divorced also lost my job 😔 ",
-
+    name: Faker::Name.name,
+    bio: "My wife and I split up and she had the kids which meant she kept the house.  I couldnt afford to pay rent in the area. I started sleeping on friends sofas but I didn't want to be a burden so I ended up on the streets",
   )
   recipient.save!
   qrcode = RQRCode::QRCode.new("https://good-deed1.herokuapp.com/recipients/#{recipient.id}")
@@ -77,7 +75,7 @@ puts "creating recipient profiles"
       :use_filename => true
       )
 
-  file = URI.open("https://images.unsplash.com/photo-1542367787-4baf35f3037d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1580518324671-c2f0833a3af3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")
 recipient.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 recipient.save!
 
@@ -88,8 +86,8 @@ end
 1.times do
   recipient = Recipient.create(
     user: admin,
-    name: Faker::FunnyName.name,
-    bio: "The cost living has been increasing and could not afford rent 💸",
+    name: Faker::Name.name,
+    bio: "The cost living has been increasing and could not afford my mortgage.  I lost my flat and started renting but that was even more expensive, so I ended up sleeping rough some nights.",
 
   )
   recipient.save!
@@ -112,7 +110,7 @@ end
       :use_filename => true
       )
 
-  file = URI.open("https://images.unsplash.com/photo-1529520161780-2573a0926b31?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1624395213043-fa2e123b2656?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80")
 recipient.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 recipient.save!
 
@@ -139,8 +137,8 @@ end
 1.times do
   recipient = Recipient.create(
     user: admin,
-    name: Faker::FunnyName.name,
-    bio: "Lost my dad and the death has really affected my mental health and things became incredibly terrible 😢 ",
+    name: Faker::Name.name,
+    bio: "I lost my dad and it has really affected my mental health. Every day tasks became impossible and I was missing days of work.  My zero hours contract meant I had no safety net and I lost everything",
 
   )
   recipient.save!
@@ -163,7 +161,7 @@ end
       :use_filename => true
       )
 
-  file = URI.open("https://images.unsplash.com/photo-1525898416124-a6464ad4dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1606335192038-f5a05f761b3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80")
 recipient.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 recipient.save!
 

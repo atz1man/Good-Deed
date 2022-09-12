@@ -14,7 +14,8 @@
   <%= cl_image_tag @recipient.photo.key, height: 300, width: 400, crop: :fill, class: "prof-img" %>
 <% end %>
 
-<p class ="p-blue-bigger"><%= @recipient.bio %></p>
+
+  <p class ="p-blue"><%= @recipient.bio %></p>
 
 <%# QR code that has been created %>
 <% if admin? %>
@@ -29,10 +30,14 @@
 <% end %>
 
 <% if !admin? %>
-  <div class="d-flex flex-column">
+  <div class="d-flex sflex-column">
     <div class="m-auto">
       <%# show a link to my donations so i can see them all %>
-      <%= render "new_donation" %>
+      <%# render "new_donation" %>
+      <%= render "new_donation", donation: @donation %>
+    </div>
+    <div class="m-auto">
+      <%= link_to "About Good Deed", root_path, class: "btn-blue-sml" %>
     </div>
   </div>
 <% end %>
@@ -56,4 +61,4 @@
       </div>
     </div>
   </div>
-</div> %>
+</div>
