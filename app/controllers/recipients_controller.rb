@@ -1,7 +1,12 @@
 class RecipientsController < ApplicationController
   def index
     @user = current_user
-    @recipients = Recipient.where(user: current_user) if current_user.admin? == true
+    recipients = Recipient.where(user: current_user) if current_user.admin? == true
+      if params[:query].present?
+        @recipients = recipients.where("name ILIKE ?", "%#{params[:query]}%")
+      else
+        @recipients = recipients.all
+      end
     all_donations = Donation.where(user: current_user)
     @donations = all_donations.select(:recipient_id).distinct
   end
