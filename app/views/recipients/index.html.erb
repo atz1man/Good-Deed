@@ -1,8 +1,6 @@
 <%# title to welcome the admin with their name %>
 <div class="d-flex justify-content-center">
-  <% if current_user.present?  %>
-    <h1 class="title-white">Hello <%= current_user.first_name %> </h1>
-  <% end %>
+  <h1 class="title-white">Hello <%= current_user.first_name %> </h1>
 </div>
   <%# if you are an admin you can create a profile and search %>
   <% if admin? %>
@@ -10,33 +8,37 @@
       <%= link_to "Create a profile", new_recipient_path, class: "btn-blue-sml" %>
     </div>
     <div class="d-flex justify-content-center">
-    <%= form_with url: recipients_path, method: :get, class: "search d-flex" do %>
+      <%= form_with url: recipients_path, method: :get, class: "search d-flex" do %>
       <%= text_field_tag :query,
         params[:query],
         class: "search-box",
         placeholder: "Search for profiles 🔍" %>
       <%= submit_tag ""%>
+      <% end %>
     </div>
-    <% end %>
   <% end %>
+
   <%# User Actions being represents%>
+
 <div class="container">
   <div class="cards d-flex justify-content-center">
     <div class= "row">
       <div class="column m-auto">
+      <% if admin? == false %>
         <% if @user.donations.present? %>
           <p class="p-blue-bigger">You have donated to...</p>
-          <% @donations.each do |donation| %>
-            <% recipient = Recipient.find(donation.recipient_id) %>
+            <% @user.donations.each do |donation| %>
+              <% recipient = Recipient.find(donation.recipient_id) %>
                 <div class="card d-flex justify-content-center">
                   <% if recipient.photo.key.present? %>
                     <%= cl_image_tag recipient.photo.key, height: 300, width: 400, crop: :fill %>
                     <p class="p-blue-bigger"><%= link_to recipient.name, recipient_path(recipient) %></p>
                   <% end %>
                 </div>
-          <% end %>
-          <%# <% else %>
-          <%# <p class= "p-blue-bigger">You have not donated to anyone</p> %>
+            <% end %>
+            <%# <% else %>
+            <%# <p class= "p-blue-bigger">You have not donated to anyone</p> %>
+        <% end %>
         <% end %>
       </div>
 
@@ -53,4 +55,5 @@
       <% end %>
     </div>
   </div>
+</div>
 </div>
