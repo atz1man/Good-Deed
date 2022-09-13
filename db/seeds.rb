@@ -76,7 +76,7 @@ puts "------------------"
 #   recipient = Recipient.create(
 #     user: admin,
 #     name: Faker::Name.name,
-#     bio: "The cost living has been increasing and could not afford my mortgage.  I lost my flat and started renting but that was even more expensive, so I ended up sleeping rough some nights.",
+#     bio: "The cost of living has been increasing and could not afford my mortgage.  I lost my flat and started renting but that was even more expensive, so I ended up sleeping rough some nights.",
 
 #   )
 #   recipient.save!
