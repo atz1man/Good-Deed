@@ -37,8 +37,12 @@
                   </div>
                 <% end %>
               <% end %>
-              <%# <% else %>
-              <%# <p class= "p-blue-bigger">You have not donated to anyone</p> %>
+          <% else %>
+          <p class= "p-blue-bigger">You have not donated to anyone, yet</p>
+          <div class="d-flex justify-content-center">
+            <label for="donate" class="btn-orange-lrg">Donate</label>
+            <input type="file" name="photo" id="donate">
+          </div>
           <% end %>
         <% end %>
       </div>
