@@ -26,7 +26,7 @@
         <% if admin? == false %>
           <% if @user.donations.present? %>
             <p class="p-blue-bigger">You have donated to...</p>
-              <% @user.donations.each do |donation| %>
+              <% @donations.each do |donation| %>
                 <% recipient = Recipient.find(donation.recipient_id) %>
                 <%= link_to recipient_path(recipient) do %>
                   <div class="card d-flex justify-content-center">
