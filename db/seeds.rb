@@ -1,34 +1,37 @@
 #   movies = Movie.create([{ name: “Star Wars” }, { name: “Lord of the Rings” }])
 #   Character.create(name: “Luke”, movie: movies.first)
-require ‘faker’
-require “open-uri”
-puts “cleaning database”
+require 'faker'
+require "open-uri"
+puts "cleaning database"
 Donation.destroy_all
 Recipient.destroy_all
 User.destroy_all
-puts “creating users”
-puts “------------------”
+puts "creating users"
+puts "------------------"
 user1 = User.create(
-  email: ‘rizwan@gmail.com’,
-  password: “123456",
+  email: "rizwan@gmail.com",
+  password: "123456",
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   admin: false
 )
-puts “------------------”
+puts "------------------"
     admin = User.create(
-    email: ‘admin@gmail.com’,
-    password: “123456",
+    email: "admin@gmail.com",
+    password: "123456",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     admin: true
   )
-puts “admin #{User.last.admin} user created”
+#puts "admin #{User.last.admin} user created"
 puts admin.save!
-puts “------------------”
-puts “All users have been created”
-puts “------------------”
-# puts “creating recipient profiles”
+puts "------------------"
+puts "All users have been created"
+puts "------------------"
+
+puts "------------------"
+puts "finished creating everything"
+# puts “creating recipient profiles
 # 1 Recipieint
 # 1.times do
 #   recipient = Recipient.create(
@@ -143,5 +146,3 @@ puts “------------------”
 #   )
 #   puts “donation created”
 # end
-puts “------------------”
-puts “finished creating everything”
