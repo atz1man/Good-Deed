@@ -60,6 +60,12 @@ class RecipientsController < ApplicationController
     @recipient = Recipient.find(params[:id])
   end
 
+  def update
+    recipient = Recipient.find(params[:id])
+    recipient.update(recipient_params)
+    redirect_to recipient_path(recipient)
+  end
+
   def destroy
     @recipient = Recipient.find(params[:id])
     @recipient.destroy
