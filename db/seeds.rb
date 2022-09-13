@@ -178,7 +178,8 @@ puts "creating donations"
   Donation.create(
     amount: rand(3..10),
     user: user1,
-    recipient: Recipient.first
+    recipient: Recipient.first,
+    message: "Good luck!"
   )
   puts "donation created"
 end
