@@ -18,7 +18,7 @@
     <% if admin?  %>
       <div class="link-to">
       <%# edit a profile %>
-      <%= link_to edit_recipient_path do %>
+      <%= link_to edit_recipient_path(@recipient) do %>
       <i class="fa-solid fa-pen-to-square" title="Edit"></i>
       <% end %>
       <%# delete a profile %>
@@ -47,6 +47,16 @@
         <p><%= donation.message %></p>
       <% end %>
 
+    </div>
+    <%# messages from the donations %>
+    <div>
+      <p class="italic-bold">Messages:</p>
+    </div>
+    <div>
+      <%= @donations.each do |donation| %>
+        <p class="p-blue"><%= donation.message %></p>
+        <hr class="solid">
+      <% end %>
     </div>
   <% end %>
 

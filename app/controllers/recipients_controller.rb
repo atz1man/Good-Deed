@@ -22,7 +22,6 @@ class RecipientsController < ApplicationController
 
   def show
     @recipient = Recipient.find(params[:id])
-
     if current_user.present?
       if current_user.admin?
         @donations = Donation.where(recipient: @recipient)
@@ -30,7 +29,6 @@ class RecipientsController < ApplicationController
         @donations = Donation.where(user: current_user)
       end
     end
-
     @donation = Donation.new(recipient: @recipient, user: current_user)
   end
 

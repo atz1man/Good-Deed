@@ -3,8 +3,8 @@
   <p class="p-blue"> Enter the amount you would like to donate</p>
 
   <%= simple_form_for([@recipient, @donation]) do |f| %>
-    <%= f.input :amount %>
     <%= f.input :message %>
+    <%= f.input :amount %>
     <ul>
       <button data-action="click->amount#donate" type="button" class="btn-orange-sml bold-text">£3</button>
       <button data-action="click->amount#donate"type="button" class="btn-orange-sml bold-text">£5</button>
