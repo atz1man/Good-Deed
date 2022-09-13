@@ -2,23 +2,35 @@ class RecipientsController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    # if someone is logged in
     if current_user.present?
       @user = current_user
+      # if the user is an admin
       if current_user.admin?
+        # if there are search params
         if params[:query].present?
           @recipients = Recipient.where(user: current_user).where("name ILIKE ?", "%#{params[:query]}%").reverse
         else
-          @recipients = Recipient.where(user: current_user).reverse
+          @recipients = Recipient.where(user: current_user)
         end
+      else
+        all_donations = Donation.where(user: current_user)
+        @donations = all_donations.select(:recipient_id).distinct.reverse
       end
-    else
-      all_donations = Donation.where(user: current_user)
-      @donations = all_donations.select(:recipient_id).distinct.reverse
     end
   end
 
   def show
     @recipient = Recipient.find(params[:id])
+
+    if current_user.present?
+      if current_user.admin?
+        @donations = Donation.where(recipient: @recipient)
+      else
+        @donations = Donation.where(user: current_user)
+      end
+    end
+
     @donation = Donation.new(recipient: @recipient, user: current_user)
   end
 
