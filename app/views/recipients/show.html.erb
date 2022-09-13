@@ -44,25 +44,16 @@
 
     </div>
     <%# messages from the donations %>
-    <% if admin? %>
-      <div>
-        <p class="italic-bold">Messages:</p>
-      </div>
-      <div>
-        <table>
-          <tr>
-            <th>Message</th>
-            <th>Amount</th>
-          </tr>
-            <% @donations.each do |donation| %>
-            <tr>
-            <p class="p-blue"><%= donation.message %></p>
-            <p><%= donation.amount %></p>
-            </tr>
-          <% end %>
-        </table>
-      </div>
-    <% end %>
+    <div>
+      <p class="italic-bold">Messages:</p>
+    </div>
+    <div>
+      <% @donations.each do |donation| %>
+        <p class="p-blue"><%= donation.message %></p>
+        <hr class="solid">
+      <% end %>
+    </div>
+  <% end %>
 
   <%#  if user you will be able to donate here%>
   <% if !admin? %>
