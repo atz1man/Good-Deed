@@ -6,12 +6,12 @@
     <%= f.input :amount %>
     <%= f.input :message %>
     <ul>
-      <button data-action="click->amount#donate" type="button" class="btn-orange-sml bold-numbers">£3</button>
-      <button data-action="click->amount#donate"type="button" class="btn-orange-sml bold-numbers">£5</button>
-      <button data-action="click->amount#donate" type="button" class="btn-orange-sml bold-numbers">£7</button>
+      <button data-action="click->amount#donate" type="button" class="btn-orange-sml bold-text">£3</button>
+      <button data-action="click->amount#donate"type="button" class="btn-orange-sml bold-text">£5</button>
+      <button data-action="click->amount#donate" type="button" class="btn-orange-sml bold-text">£7</button>
     </ul>
     <div class="form-actions" id= "new_donation">
-      <%= f.button :submit, "change a life!" %>
+      <%= f.button :submit, "change a life!", class:"btn-blue-sml" %>
     </div>
   <% end %>
 

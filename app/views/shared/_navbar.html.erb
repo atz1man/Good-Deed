@@ -2,7 +2,7 @@
 <div class="navbar">
 <%# create a nav bar with the logo button on left which will take you home %>
   <%= link_to root_path, class: "navbar-brand" do %>
-  <%= image_tag "https://res.cloudinary.com/dl9jjyyew/image/upload/v1662643947/GoodDeed_GD_g4wtuh.png" %>
+  <%= image_tag "https://res.cloudinary.com/dl9jjyyew/image/upload/v1662643947/GoodDeed_GD_g4wtuh.png"  %>
   <% end %>
 
 <%# if the user is signed in they will see log out %>
@@ -11,21 +11,21 @@
       <div class="navbar-item link-to">
         <%# create a profile %>
         <%= link_to new_recipient_path do %>
-          <i class="fa-solid fa-user-plus"></i>
+          <i class="fa-solid fa-user-plus" title="Create a Profile"></i>
           <% end %>
       </div>
     <% end %>
       <div class="navbar-item link-to">
         <%# log out %>
         <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
-        <i class="fa-solid fa-right-from-bracket"></i>
+        <i class="fa-solid fa-right-from-bracket" title="Log Out"></i>
         <% end %>
       </div>
   <% else %>
     <div class="navbar-item link-to">
       <%# login %>
       <%= link_to new_user_session_path do %>
-        <i class="fa-solid fa-right-to-bracket"></i>
+        <i class="fa-solid fa-right-to-bracket" title="Login"></i>
       <% end %>
     </div>
   <% end %>
