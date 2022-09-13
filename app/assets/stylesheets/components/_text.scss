@@ -37,6 +37,7 @@ html * {
   font-style: italic;
   font-weight: bolder;
   text-align: left;
+  padding: 10px;
 }
 
 .bold-text {
@@ -85,4 +86,14 @@ html * {
   color:#004274;
   font-size: 15px;
   font-family: 'Work Sans', sans-serif;
+}
+
+.fa-brands {
+  color: white;
+  font-size: 30px;
+}
+
+.fa-solid {
+  color: white;
+  font-size: 25px;
 }
