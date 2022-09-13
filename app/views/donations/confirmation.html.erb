@@ -1,8 +1,8 @@
-<p>Thank you for donating £<%= @donation %> to <%= @recipient.name %></p>
+<p class= "bold-text"> Please confirm that you want to pay £<%= @donation.amount %> to <%= @recipient.name %></p>
 
-<%= link_to "Go Back To My Donations", recipients_path %>
-
-<button id="pay" class="btn btn-primary">Pay</button>
+<div class= "btn-centre">
+  <button id="pay" class="btn-blue-lrg">Confirm Payment</button>
+</div>
  <script src="https://js.stripe.com/v3/"></script>
   <script>
     const paymentButton = document.getElementById('pay');
@@ -14,3 +14,7 @@
       });
     });
   </script>
+
+<div class="d-flex justify-content-center">
+  <%= link_to "My Donations", recipients_path, class: "btn-blue-lrg"%>
+</div>
