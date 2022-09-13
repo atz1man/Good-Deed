@@ -42,6 +42,16 @@
       <% newPath = str.sub /\/v\d*\/production/, '' %>
       <img src="<%= newPath %>" alt="qr-code">
     </div>
+    <%# messages from the donations %>
+    <div>
+      <p class="italic-bold">Messages:</p>
+    </div>
+    <div>
+      <%= @donations.each do |donation| %>
+        <p class="p-blue"><%= donation.message %></p>
+        <hr class="solid">
+      <% end %>
+    </div>
   <% end %>
 
   <%#  if user you will be able to donate here%>
