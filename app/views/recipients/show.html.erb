@@ -16,15 +16,15 @@
   <%# admin you can edit and delete%>
   <div class="admin-prof">
     <% if admin?  %>
-      <div class="link-to d-flex justify-content-center">
-        <%# edit a profile %>
-        <%= link_to edit_recipient_path do %>
-          <i class="fa-solid fa-pen-to-square" title="Edit"> </i>
-        <% end %>
-        <%# delete a profile %>
-        <%= link_to recipient_path(@recipient), data: { "turbo-method": :delete, "turbo-confirm": "are you sure?"} do %>
-          <i class="fa-solid fa-trash" title="Delete"> </i>
-        <% end %>
+      <div class="link-to">
+      <%# edit a profile %>
+      <%= link_to edit_recipient_path(@recipient) do %>
+      <i class="fa-solid fa-pen-to-square" title="Edit"></i>
+      <% end %>
+      <%# delete a profile %>
+      <%= link_to recipient_path(@recipient), data: { "turbo-method": :delete, "turbo-confirm": "are you sure?"} do %>
+      <i class="fa-solid fa-trash" title="Delete"></i>
+      <% end %>
       </div>
     <% end %>
   </div>
