@@ -1,4 +1,6 @@
 class RecipientsController < ApplicationController
+  # skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     if current_user.present?
       @user = current_user

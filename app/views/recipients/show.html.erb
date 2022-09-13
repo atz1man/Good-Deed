@@ -19,11 +19,11 @@
       <div class="link-to">
       <%# edit a profile %>
       <%= link_to edit_recipient_path do %>
-      <i class="fa-solid fa-pen-to-square">title="Edit"</i>
+      <i class="fa-solid fa-pen-to-square" title="Edit"></i>
       <% end %>
       <%# delete a profile %>
       <%= link_to recipient_path(@recipient), data: { "turbo-method": :delete, "turbo-confirm": "are you sure?"} do %>
-      <i class="fa-solid fa-trash" title="Bin"></i>
+      <i class="fa-solid fa-trash" title="Delete"></i>
       <% end %>
       </div>
     <% end %>
