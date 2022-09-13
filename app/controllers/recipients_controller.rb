@@ -1,6 +1,6 @@
 class RecipientsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
-
+  
   def index
     # if someone is logged in
     if current_user.present?
