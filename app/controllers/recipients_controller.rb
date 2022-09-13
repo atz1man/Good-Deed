@@ -1,4 +1,6 @@
 class RecipientsController < ApplicationController
+  # skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     if current_user.present?
       @user = current_user
@@ -28,7 +30,10 @@ class RecipientsController < ApplicationController
     @recipient = Recipient.new(recipient_params)
     @recipient.user = current_user
     @recipient.save!
-    qrcode = RQRCode::QRCode.new("https://good-deed1.herokuapp.com/recipients/#{@recipient.id}")
+    #Previous version linking to the heroku app address
+    #qrcode = RQRCode::QRCode.new("https://good-deed1.herokuapp.com/recipients/#{@recipient.id}")
+   # www.good-deed.co
+    qrcode = RQRCode::QRCode.new("https://www.good-deed.co/recipients/#{@recipient.id}")
     png = qrcode.as_png(
       bit_depth: 1,
       border_modules: 1,
