@@ -1,0 +1,8 @@
+<div class="container">
+    <%= simple_form_for @recipient do |f| %>
+    <%= f.input :name%>
+    <%= f.input :bio %>
+    <%= f.input :photo %>
+    <%= f.button :submit, value: "Confirm changes", class: "btn-blue-sml"%>
+  <% end %>
+</div>
