@@ -18,7 +18,7 @@ class DonationsController < ApplicationController
       line_items: [{
         price_data: {
           currency: 'gbp',
-          unit_amount: 10000,
+          unit_amount: @donation.amount*100,
           product_data: {
             name: @recipient.name,
             description: "test"
