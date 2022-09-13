@@ -83,7 +83,7 @@ p .p-blue-bigger {
 
 
 .link-to a {
-  margin-top: 5px;
+  margin: 5px 10px 0px 10px;
   text-decoration: none;
   color:#004274;
   font-size: 15px;
@@ -98,4 +98,9 @@ p .p-blue-bigger {
 .fa-solid {
   color: white;
   font-size: 25px;
+}
+
+.solid {
+  margin: 5px;
+  border-top: 3px solid #bbb;
 }

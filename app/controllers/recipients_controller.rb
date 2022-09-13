@@ -19,6 +19,7 @@ class RecipientsController < ApplicationController
 
   def show
     @recipient = Recipient.find(params[:id])
+    @donations = Donation.where(recipient_id: @recipient.id)
     @donation = Donation.new(recipient: @recipient, user: current_user)
   end
 
