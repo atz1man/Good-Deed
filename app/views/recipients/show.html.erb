@@ -2,11 +2,11 @@
   <%# go back to previous page (index) %>
   <div class ="link-to justify-content-left d-flex mx-3">
     <%= link_to recipients_path do %>
-    <i class="fa-solid fa-backward"></i>
+    <i class="fa-solid fa-backward" title="Back"></i>
     <% end %>
   </div>
   <%# recipient name %>
-  <h1 class="title-white"> <%= @recipient.name %> </h1>
+  <h1 class="title-white small"> <%= @recipient.name %> </h1>
 
   <%# if the recipient has a photo show their picture %>
   <% if @recipient.photo.key.present?%>
@@ -19,18 +19,16 @@
       <div class="link-to">
       <%# edit a profile %>
       <%= link_to edit_recipient_path do %>
-      <i class="fa-solid fa-pen-to-square"></i>
+      <i class="fa-solid fa-pen-to-square">title="Edit"</i>
       <% end %>
       <%# delete a profile %>
       <%= link_to recipient_path(@recipient), data: { "turbo-method": :delete, "turbo-confirm": "are you sure?"} do %>
-      <i class="fa-solid fa-trash"></i>
+      <i class="fa-solid fa-trash" title="Bin"></i>
       <% end %>
       </div>
     <% end %>
   </div>
   <%# end if admin %>
-
-
   <%# recipient bio %>
   <p class ="p-blue"><%= @recipient.bio %></p>
 
@@ -54,29 +52,8 @@
         <%# render "new_donation" %>
         <%= render "new_donation", donation: @donation %>
       </div>
-      <div class="m-auto">
-        <%= link_to "About Good Deed", root_path, class: "btn-blue-sml" %>
-      </div>
+      <%# <div class="m-auto">
+        <%# <%= link_to "About Good Deed", root_path, class: "btn-blue-sml" %>
+     <%# </div> %>
     </div>
   <% end %>
-
-<%# CODE FOR A MODAL TO READ MORE BUT SHOULD ONLY NEED IT FOR USERS NOT ADMIN %>
-<%#
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Good Deed</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Good Deed are a wonderful charity who work with homeless people to help get them off the street.
-        80% of people say they are more likely to donate to the homeless if they knewGood Deed are a wonderful charity who work with homeless people to help get them off the street.
-        80% of people say they are more likely to donate to the homeless if they knewGood Deed are a wonderful charity who work with homeless people to help get them off the street.
-        80% of people say they are more likely to donate to the homeless if they knewGood Deed are a wonderful charity who work with homeless people to help get them off the street.
-        80% of people say they are more likely to donate to the homeless if they knewGood Deed are a wonderful charity who work with homeless people to help get them off the street.
-        80% of people say they are more likely to donate to the homeless if they knew
-      </div>
-    </div>
-  </div>
-</div>
