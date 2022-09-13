@@ -1,5 +1,5 @@
 class DonationsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :confirmation]
+  skip_before_action :authenticate_user!
 
   def new
     @recipient = Recipient.find(params[:recipient_id])
