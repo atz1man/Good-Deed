@@ -16,6 +16,16 @@ class RecipientsController < ApplicationController
       else
         all_donations = Donation.where(user: current_user)
         @donations = all_donations.select(:recipient_id).distinct.reverse
+
+        if (session[:donation]).present?
+          sign_up = session[:donation]
+          add_donation = Donation.find(sign_up['id'])
+          add_donation.user = current_user
+          add_donation.save
+          @donations = all_donations.select(:recipient_id).distinct.reverse
+          session.clear
+        end
+
       end
     end
   end

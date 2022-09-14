@@ -14,6 +14,8 @@ class DonationsController < ApplicationController
     @donation.user = current_user
     @donation.save!
 
+    session[:donation] = @donation
+
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
