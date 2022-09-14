@@ -11,9 +11,8 @@
       <%= form_with url: recipients_path, method: :get, class: "search d-flex" do %>
       <%= text_field_tag :query,
         params[:query],
-        class: "search-box",
-        placeholder: "Search for profiles 🔍" %>
-      <%= submit_tag ""%>
+        placeholder: "Search for profile 🔍",
+        class:'search-form' %>
       <% end %>
     </div>
   <% end %>
@@ -21,7 +20,7 @@
   <%# User Actions being represents%>
 
   <div class="cards d-flex justify-content-center">
-    <div class= "row">
+    <div class= "row justify-content-between">
       <div class="column">
         <% if admin? == false %>
           <% if @user.donations.present? %>
@@ -32,7 +31,7 @@
                   <div class="card d-flex justify-content-center">
                     <% if recipient.photo.key.present? %>
                       <p class= "p-blue-bigger d-flex justify-content-center" ><%= recipient.name%></p>
-                      <%= cl_image_tag recipient.photo.key, height: 300, width: 400, crop: :fill %>
+                      <%= cl_image_tag recipient.photo.key, height: 150, width: 150, crop: :fill %>
                     <% end %>
                   </div>
                 <% end %>
@@ -51,11 +50,11 @@
       <% if admin? %>
           <%# <%= link_to 'new recipient', new_recipient_path  %>
           <% @recipients.each do |recipient| %>
-            <div class = "card d-flex justify-content-center">
+            <div class = "card">
               <% if recipient.photo.key.present? %>
                 <%= link_to recipient_path(recipient) do %>
-                  <p class="p-blue-bigger d-flex justify-content-center"><%= recipient.name %></p>
-                  <%= cl_image_tag recipient.photo.key, height: 300, width: 400, crop: :fill %>
+                  <%= cl_image_tag recipient.photo.key, height: 150, width: 150, crop: :fill, class:"image-cropper-index" %>
+                  <p class="p-blue d-flex justify-content-center"><%= recipient.name %></p>
                 <% end %>
               <% end %>
             </div>

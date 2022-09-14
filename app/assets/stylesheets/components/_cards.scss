@@ -2,29 +2,28 @@ $orange-gd: #F98D44;
 $blue-gd: #004274;
 $green-gd: #78D9B3;
 
-.cards {
+
+
+.image-cropper-index {
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 10px auto 10px;
 }
 
 .card {
-  width: 350px;
-  height: auto;
-  margin: 15px auto 0px auto;
-  // border: 4px solid #004274;
-  padding-bottom: 10px;
+  margin-top: 10px;
   border-radius: 25px;
-  background-color: white;
-  font-weight: bold;
-  // border: 0.5px solid #004274;
-  box-shadow: 1px 1px 1px #004274;
+  box-shadow: 3px 3px 10px #004274;
+  width: 45%;
 }
 
-.card img {
-  width: 90%;
-  justify-content: center;
-  height: auto;
-  margin: auto;
-  border-radius: 25px;
-  margin-top: -10px;
+.index-img {
+  display: flex;
+  margin: 0 auto;
+  margin-left: -25%; //centers the image
+  height: 100%;
+  width: auto;
+  background-size: cover;
 }
 
 a {
@@ -34,10 +33,9 @@ a {
   justify-content: center;
 }
 
-
 .row {
-  width: 80%;
-  margin: 10px;
+  width: 100%;
+  margin: 10px 15px;
 }
 
 // .cards {
