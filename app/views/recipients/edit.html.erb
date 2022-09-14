@@ -1,8 +1,19 @@
 <div class="container">
-    <%= simple_form_for @recipient do |f| %>
-    <%= f.input :name%>
-    <%= f.input :bio %>
-    <%= f.input :photo %>
-    <%= f.button :submit, value: "Confirm changes", class: "btn-blue-sml"%>
-  <% end %>
-</div>
+    <div class="form">
+      <h1 class="title-blue">Make changes</h1>
+      <br>
+      <%= simple_form_for @recipient do |f| %>
+      <div class="form-input">
+        <%= f.input :name, :label => false, placeholder: "Name", :input_html => { :class => 'form-inputs'}%>
+        <%= f.input :bio, :label => false, placeholder: "Share their story", :input_html => { :class => 'form-inputs'}  %>
+        <%= f.input :photo, :label => false, placeholder: "Upload a photo", :input_html => { :class => 'form-inputs'} %>
+      </div>
+      <div class="form-actions">
+        <div class="d-flex justify-content-center">
+          <%# want this to go to recipient_path but it takes me to recipients.id instead of /id %>
+          <%= f.button :submit, "Complete", class: "btn-blue-sml"  %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
