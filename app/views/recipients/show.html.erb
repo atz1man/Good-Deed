@@ -57,11 +57,14 @@
     <div>
       <div class="message-product">
         <% @donations.each do |donation| %>
-        <div class="message-product-infos">
           <hr class="solid">
-          <h2 class="p-blue-bigger">£<%= donation.amount %></h2>
-          <p class="p-blue"><%= donation.message %></p>
-        </div>
+          <div class="message-product-infos d-flex justify-content-left">
+            <h2 class="p-blue">£<%= donation.amount %></h2>
+            <p class="p-blue"><%= donation.message %></p>
+          </div>
+            <div class="justify-content-right">
+              <p class="p-blue-sml"><%= donation.created_at.strftime("%d %b") %></p>
+            </div>
         <% end %>
     </div>
     <% end %>

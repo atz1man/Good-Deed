@@ -45,7 +45,7 @@ html * {
   font-size: 30px;
   font-weight: bold;
   font-family: 'Work Sans', sans-serif;
-  padding: 20px;
+  padding: 16px 20px;
   text-align: center;
 }
 
@@ -55,7 +55,7 @@ html * {
   font-family: 'Work Sans', sans-serif;
   padding: 0px 11px;
   margin-top: 10px;
-  margin-bottom: 0em;
+  margin-bottom: 1em;
   text-align: left;
 }
 
@@ -71,6 +71,13 @@ html * {
 
 p .p-blue-bigger {
   text-decoration: none;
+}
+
+.p-blue-sml {
+  color: #004274;
+  font-size: 15px;
+  font-family: 'Work Sans', sans-serif;
+  text-align: right;
 }
 
 .p-orange{
@@ -96,7 +103,7 @@ p .p-blue-bigger {
 }
 
 .fa-solid {
-  color: white;
+  color: #004274;
   font-size: 25px;
 }
 
