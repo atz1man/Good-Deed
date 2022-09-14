@@ -6,7 +6,7 @@
  <script src="https://js.stripe.com/v3/"></script>
   <script>
     const paymentButton = document.getElementById('pay');
-    console.log(paymentButton)
+
     paymentButton.addEventListener('click', () => {
       const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
       stripe.redirectToCheckout({
@@ -14,7 +14,3 @@
       });
     });
   </script>
-
-<div class="d-flex justify-content-center">
-  <%= link_to "My Donations", recipients_path, class: "btn-blue-lrg"%>
-</div>
