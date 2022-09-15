@@ -1,4 +1,4 @@
-<div class="profile-top">
+<div class="container">
   <%# go back to previous page (index) %>
   <div class ="link-to justify-content-between d-flex m-3">
     <%= link_to recipients_path do %>
@@ -34,7 +34,7 @@
     </div>
 
     <%# recipient bio %>
-    <div class="container">
+    <div class="container ">
       <p class ="p-blue"><%= @recipient.bio %></p>
       <%# if admin show QR code that has been created %>
       <% if admin? %>
@@ -49,24 +49,26 @@
       <% end %>
   </div>
 
+  <div class="container">
     <% if admin? %>
     <%# messages from the donations %>
-    <div>
-      <p class="italic-bold">Messages</p>
-    </div>
-    <div>
-      <div class="message-product">
-        <% @donations.each do |donation| %>
-          <hr class="solid">
-          <div class="message-product-infos d-flex justify-content-left">
-            <h2 class="p-blue">£<%= donation.amount %></h2>
-            <p class="p-blue"><%= donation.message %></p>
-          </div>
-            <div class="justify-content-right">
-              <p class="p-blue-sml"><%= donation.created_at.strftime("%d %b") %></p>
-            </div>
-        <% end %>
-    </div>
+      <hr class="solid">
+      <div>
+        <p class="italic-bold">Messages</p>
+      </div>
+      <div>
+        <div class="message-product">
+          <% @donations.each do |donation| %>
+            <hr class="solid">
+              <div class="message-product-infos d-flex justify-content-left">
+                <h2 class="p-blue-bigger bold">£<%= donation.amount %></h2>
+                <p class="p-blue"><%= donation.message %></p>
+              </div>
+              <div class="">
+                <p class="p-blue-sml right bold mr-3"><%= donation.created_at.strftime("%d %b") %></p>
+              </div>
+          <% end %>
+      </div>
     <% end %>
 
   <%#  if user you will be able to donate here%>
@@ -79,4 +81,5 @@
       </div>
     </div>
   <% end %>
+  </div>
 </div>
