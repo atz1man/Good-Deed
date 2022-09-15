@@ -37,7 +37,8 @@ puts "------------------"
     bio: "My wife and I split up and she kept the house.  I couldnt afford to pay rent in the area. I started sleeping on friends sofas but I didn't want to be a burden so I ended up on the streets",
   )
   recipient.save!
-  qrcode = RQRCode::QRCode.new("https://good-deed.co/recipients/#{recipient.id}")
+  # qrcode = RQRCode::QRCode.new("https://good-deed.co/recipients/#{recipient.id}")
+  qrcode = RQRCode::QRCode.new("https://good-deed1.herokuapp.com/recipients/#{@recipient.id}")
 
     png = qrcode.as_png(
       bit_depth: 1,
@@ -71,7 +72,7 @@ puts "creating recipient 1"
     bio: " Hi, my name is Helen.I was in an abusive relationship, I left but couldn't afford to rent alone",
   )
   recipient.save!
-  qrcode = RQRCode::QRCode.new("https://good-deed.co/recipients/#{recipient.id}")
+  qrcode = RQRCode::QRCode.new("https://good-deed1.herokuapp.com/recipients/#{@recipient.id}")
 
     png = qrcode.as_png(
       bit_depth: 1,
@@ -105,7 +106,8 @@ recipient = Recipient.create(
   bio: "Sadly, my family didn't understand me when I came out.  I moved out at 16 and have been trying to get my life back on track",
 )
 recipient.save!
-qrcode = RQRCode::QRCode.new("https://good-deed.co/recipients/#{recipient.id}")
+# qrcode = RQRCode::QRCode.new("https://good-deed.co/recipients/#{recipient.id}")
+qrcode = RQRCode::QRCode.new("https://good-deed1.herokuapp.com/recipients/#{@recipient.id}")
 
   png = qrcode.as_png(
     bit_depth: 1,
@@ -139,7 +141,8 @@ recipient = Recipient.create(
   bio: "Hello friends! As we all know the cost of living has increased which meant I couldn't pay my mortgage, I have been homeless since 2021 and really appreciate any help.",
 )
 recipient.save!
-qrcode = RQRCode::QRCode.new("https://good-deed.co/recipients/#{recipient.id}")
+qrcode = RQRCode::QRCode.new("https://good-deed1.herokuapp.com/recipients/#{@recipient.id}")
+# qrcode = RQRCode::QRCode.new("https://good-deed.co/recipients/#{recipient.id}")
 
   png = qrcode.as_png(
     bit_depth: 1,
@@ -173,7 +176,8 @@ recipient = Recipient.create(
   bio: "Hi there, I have been struggling with addiction since I was young due to family issues.  I really want to turn my life around but feel in an impossible position",
 )
 recipient.save!
-qrcode = RQRCode::QRCode.new("https://good-deed.co/recipients/#{recipient.id}")
+qrcode = RQRCode::QRCode.new("https://good-deed1.herokuapp.com/recipients/#{@recipient.id}")
+# qrcode = RQRCode::QRCode.new("https://good-deed.co/recipients/#{recipient.id}")
 
   png = qrcode.as_png(
     bit_depth: 1,
@@ -206,7 +210,8 @@ recipient = Recipient.create(
   bio: "Dear you, thank you for any help you can offer. My mental health hasn't been the same since my dad passed, I really would love to feel independent again.",
 )
 recipient.save!
-qrcode = RQRCode::QRCode.new("https://good-deed.co/recipients/#{recipient.id}")
+qrcode = RQRCode::QRCode.new("https://good-deed1.herokuapp.com/recipients/#{@recipient.id}")
+# qrcode = RQRCode::QRCode.new("https://good-deed.co/recipients/#{recipient.id}")
 
   png = qrcode.as_png(
     bit_depth: 1,
