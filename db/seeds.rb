@@ -29,7 +29,7 @@ puts admin.save!
 puts "------------------"
 
 # 1 Recipieint
-1.times do
+# 1.times do
   recipient = Recipient.create(
     user: admin,
     name: "Mark",
@@ -165,74 +165,75 @@ file = URI.open("https://images.unsplash.com/photo-1596813362035-3edcff0c2487?ix
 recipient.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 recipient.save!
 puts "creating recipient 4"
-  end
+
 # #<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Five seed recipient>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-# # 1.times do
-# recipient = Recipient.create(
-#   user: admin,
-#   name: Faker::Name.name,
+# 1.times do
+recipient = Recipient.create(
+  user: admin,
+  name: "Leila",
 
-#   bio: "  DebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebugging ",
-# )
-# recipient.save!
-# qrcode = RQRCode::QRCode.new("https://good-deed.co/recipients/#{recipient.id}")
+  bio: "Hello friend, I was in social care as a child and when I turned 16 there wasn't much help, unfortunately I got in with the wrong crowd but I want to be better.  Thanks for reading.",
+)
+recipient.save!
+qrcode = RQRCode::QRCode.new("https://good-deed1.herokuapp.com/recipients/#{recipient.id}")
 
-#   png = qrcode.as_png(
-#     bit_depth: 1,
-#     border_modules: 1,
-#     color_mode: ChunkyPNG::COLOR_GRAYSCALE,
-#     color: "black",
-#     file: nil,
-#     fill: "white",
-#     module_px_size: 10,
-#     resize_exactly_to: false,
-#     resize_gte_to: false,
-#     size: 250
-#   )
+  png = qrcode.as_png(
+    bit_depth: 1,
+    border_modules: 1,
+    color_mode: ChunkyPNG::COLOR_GRAYSCALE,
+    color: "black",
+    file: nil,
+    fill: "white",
+    module_px_size: 10,
+    resize_exactly_to: false,
+    resize_gte_to: false,
+    size: 250
+  )
 
 
-#   Cloudinary::Uploader.upload("#{png.to_data_url}",
-#     :public_id => "qr_code#{recipient.id}",
-#     :use_filename => true
-#     )
+  Cloudinary::Uploader.upload("#{png.to_data_url}",
+    :public_id => "qr_code#{recipient.id}",
+    :use_filename => true
+    )
 
-# file = URI.open("https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80")
-# recipient.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# recipient.save!
-# puts "creating recipient 5"
+file = URI.open("https://images.unsplash.com/photo-1519076381129-b4234ae7e573?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1318&q=80")
+recipient.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+recipient.save!
+puts "creating recipient 5"
 # #<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Six seed recipient>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-# recipient = Recipient.create(
-#   user: admin,
-#   name: Faker::Name.name,
+recipient = Recipient.create(
+  user: admin,
+  name: "Amelia",
 
-#   bio: "  DebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebuggingDebugging ",
-# )
-# recipient.save!
-# qrcode = RQRCode::QRCode.new("https://good-deed.co/recipients/#{recipient.id}")
+  bio: "My son and I have been in and out of shelters since we left our home for our safety. I would love to have somewhere for us to call home one day, Thank you for all your help you can give",
+)
+recipient.save!
+qrcode = RQRCode::QRCode.new("https://good-deed1.herokuapp.com/recipients/#{recipient.id}")
 
-#   png = qrcode.as_png(
-#     bit_depth: 1,
-#     border_modules: 1,
-#     color_mode: ChunkyPNG::COLOR_GRAYSCALE,
-#     color: "black",
-#     file: nil,
-#     fill: "white",
-#     module_px_size: 10,
-#     resize_exactly_to: false,
-#     resize_gte_to: false,
-#     size: 250
-#   )
+  png = qrcode.as_png(
+    bit_depth: 1,
+    border_modules: 1,
+    color_mode: ChunkyPNG::COLOR_GRAYSCALE,
+    color: "black",
+    file: nil,
+    fill: "white",
+    module_px_size: 10,
+    resize_exactly_to: false,
+    resize_gte_to: false,
+    size: 250
+  )
 
 
-#   Cloudinary::Uploader.upload("#{png.to_data_url}",
-#     :public_id => "qr_code#{recipient.id}",
-#     :use_filename => true
-#     )
+  Cloudinary::Uploader.upload("#{png.to_data_url}",
+    :public_id => "qr_code#{recipient.id}",
+    :use_filename => true
+    )
 
-# file = URI.open("https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80")
-# recipient.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# recipient.save!
-# puts "creating recipient 6"
+file = URI.open("https://images.unsplash.com/photo-1589729132389-8f0e0b55b91e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80")
+recipient.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+recipient.save!
+puts "creating recipient 6"
+  # end
 # #<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 7 seed recipient>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # recipient = Recipient.create(
 #   user: admin,
