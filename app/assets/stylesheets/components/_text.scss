@@ -45,7 +45,7 @@ html * {
   font-size: 30px;
   font-weight: bold;
   font-family: 'Work Sans', sans-serif;
-  padding: 16px 20px;
+  padding: 10px 14px;
   text-align: center;
 }
 
@@ -59,6 +59,15 @@ html * {
   text-align: left;
 }
 
+.names {
+  color:#004274;
+  font-size: 20px;
+  font-family: 'Work Sans', sans-serif;
+  padding: 0px 11px;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
 .p-blue-bigger {
   color: #004274;
   font-size: 25px;
@@ -68,9 +77,14 @@ html * {
   // text-decoration: none;
 }
 
-
 p .p-blue-bigger {
   text-decoration: none;
+}
+
+.p-blue-med {
+  color: #004274;
+  font-size: 17px;
+  font-family: 'Work Sans', sans-serif;
 }
 
 .p-blue-sml {
@@ -92,7 +106,6 @@ p .p-blue-bigger {
   padding: 20px;
   text-align: left;
 }
-
 
 .link-to a {
   margin: 5px 10px 0px 10px;
@@ -122,7 +135,7 @@ p .p-blue-bigger {
   color: #004274;
   padding-bottom: 10px;
  }
- 
+
 .bold {
   font-weight: bolder;
 }
