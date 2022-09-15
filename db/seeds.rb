@@ -37,7 +37,7 @@ puts "------------------"
     bio: "My wife and I split up and she kept the house.  I couldnt afford to pay rent in the area. I started sleeping on friends sofas but I didn't want to be a burden so I ended up on the streets",
   )
   recipient.save!
-  qrcode = RQRCode::QRCode.new("https://good-deed.co/recipients/#{recipient.id}")
+  # qrcode = RQRCode::QRCode.new("https://good-deed.co/recipients/#{recipient.id}")
   qrcode = RQRCode::QRCode.new("https://good-deed1.herokuapp.com/recipients/#{@recipient.id}")
 
     png = qrcode.as_png(
