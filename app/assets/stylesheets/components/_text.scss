@@ -77,7 +77,12 @@ p .p-blue-bigger {
   color: #004274;
   font-size: 15px;
   font-family: 'Work Sans', sans-serif;
+}
+
+.right {
   text-align: right;
+  color: #F98D44;
+  margin-right: 10px;
 }
 
 .p-orange{
@@ -103,7 +108,7 @@ p .p-blue-bigger {
 }
 
 .fa-solid {
-  color: #004274;
+  color: white;
   font-size: 25px;
 }
 
@@ -112,6 +117,11 @@ p .p-blue-bigger {
   border-top: 3px solid #bbb;
 }
 
-p-green {
-  color:#78D9B3;
+.fa-trash, .fa-pen-to-square {
+  color: #004274;
+  padding-bottom: 10px;
+}
+
+.bold {
+  font-weight: bolder;
 }
