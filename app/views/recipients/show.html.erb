@@ -38,7 +38,7 @@
       <p class ="p-blue"><%= @recipient.bio %></p>
       <%# if admin show QR code that has been created %>
       <% if admin? %>
-        <div class="m-0">
+        <div class="m-auto">
           <% str = cl_image_path "qr_code#{@recipient.id}.png" %>
           <%# localhost:%>
           <%# <% newPath = str.sub /\/v\d*\/development/, '' %>
