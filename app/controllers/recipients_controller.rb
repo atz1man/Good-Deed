@@ -51,9 +51,10 @@ class RecipientsController < ApplicationController
     @recipient.user = current_user
     @recipient.save!
     #Previous version linking to the heroku app address
-    qrcode = RQRCode::QRCode.new("https://good-deed1.herokuapp.com/recipients/#{@recipient.id}")
+    # https://www.good-deed.co/recipients/#{@recipient.id}
+    #qrcode = RQRCode::QRCode.new("https://good-deed1.herokuapp.com/recipients/#{@recipient.id}")
    # www.good-deed.co
-     # qrcode = RQRCode::QRCode.new("https://www.good-deed.co/recipients/#{@recipient.id}")
+    qrcode = RQRCode::QRCode.new("https://good-deed1.herokuapp.com/recipients/#{@recipient.id}")
     png = qrcode.as_png(
       bit_depth: 1,
       border_modules: 1,

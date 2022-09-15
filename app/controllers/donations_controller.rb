@@ -2,7 +2,7 @@ class DonationsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def new
-    @recipient = Recipient.find(params[:recipient_id]).reverse
+    @recipient = Recipient.find(params[:recipient_id])
     @donation = Donation.new
     # @recipients = Recipient.all
   end
