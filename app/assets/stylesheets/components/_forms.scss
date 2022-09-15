@@ -29,4 +29,10 @@ $green-gd: #78D9B3;
   margin: 20px;
   padding: 13px;
   text-align: center;
+  border: 1px solid white;
+}
+
+.search-form:focus {
+  border: 1px solid #004274;
+
 }
